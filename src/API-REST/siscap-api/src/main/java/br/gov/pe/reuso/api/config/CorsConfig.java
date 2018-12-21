@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.config;
+package br.gov.pe.reuso.api.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

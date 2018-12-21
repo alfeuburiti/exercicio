@@ -1,10 +1,12 @@
 BEGIN TRANSACTION
 GO
 
-DROP TABLE IF EXISTS feriado_fonte
+IF OBJECT_ID('dbo.feriado_fonte', 'U') IS NOT NULL 
+  DROP TABLE dbo.feriado_fonte; 
 GO
 
-DROP TABLE IF EXISTS feriado
+IF OBJECT_ID('dbo.feriado', 'U') IS NOT NULL 
+  DROP TABLE dbo.feriado; 
 GO
 
 CREATE TABLE [dbo].[feriado](

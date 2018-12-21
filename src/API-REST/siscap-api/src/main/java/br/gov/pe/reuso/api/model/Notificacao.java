@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.model;
+package br.gov.pe.reuso.api.model;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -15,7 +15,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import br.gov.pi.tce.siscap.api.model.enums.NotificacaoTipo;
+import br.gov.pe.reuso.api.model.enums.NotificacaoTipo;
 
 @Entity
 @Table(name="notificacao")

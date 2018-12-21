@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.resource;
+package br.gov.pe.reuso.api.resource;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,10 +23,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import br.gov.pi.tce.siscap.api.event.RecursoCriadoEvent;
-import br.gov.pi.tce.siscap.api.model.PublicacaoAnexo;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoAnexoRepository;
-import br.gov.pi.tce.siscap.api.service.PublicacaoAnexoService;
+import br.gov.pe.reuso.api.event.RecursoCriadoEvent;
+import br.gov.pe.reuso.api.model.PublicacaoAnexo;
+import br.gov.pe.reuso.api.repository.PublicacaoAnexoRepository;
+import br.gov.pe.reuso.api.service.PublicacaoAnexoService;
 
 @RestController
 @RequestMapping("/publicacoes_anexos")

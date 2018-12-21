@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.service.exception;
+package br.gov.pe.reuso.api.service.exception;
 
 public class PublicacaoInexistenteException extends RuntimeException {
 

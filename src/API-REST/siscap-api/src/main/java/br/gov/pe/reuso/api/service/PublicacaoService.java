@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.service;
+package br.gov.pe.reuso.api.service;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -9,14 +9,14 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import br.gov.pi.tce.siscap.api.model.Arquivo;
-import br.gov.pi.tce.siscap.api.model.Fonte;
-import br.gov.pi.tce.siscap.api.model.Publicacao;
-import br.gov.pi.tce.siscap.api.model.PublicacaoHistorico;
-import br.gov.pi.tce.siscap.api.repository.FonteRepository;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoHistoricoRepository;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoRepository;
-import br.gov.pi.tce.siscap.api.service.exception.FonteInexistenteOuInativaException;
+import br.gov.pe.reuso.api.model.Arquivo;
+import br.gov.pe.reuso.api.model.Fonte;
+import br.gov.pe.reuso.api.model.Publicacao;
+import br.gov.pe.reuso.api.model.PublicacaoHistorico;
+import br.gov.pe.reuso.api.repository.FonteRepository;
+import br.gov.pe.reuso.api.repository.PublicacaoHistoricoRepository;
+import br.gov.pe.reuso.api.repository.PublicacaoRepository;
+import br.gov.pe.reuso.api.service.exception.FonteInexistenteOuInativaException;
 
 @Service
 public class PublicacaoService {

@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.resource;
+package br.gov.pe.reuso.api.resource;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.pi.tce.siscap.api.event.RecursoCriadoEvent;
-import br.gov.pi.tce.siscap.api.model.Notificacao;
-import br.gov.pi.tce.siscap.api.repository.NotificacaoRepository;
-import br.gov.pi.tce.siscap.api.repository.filter.NotificacaoFilter;
-import br.gov.pi.tce.siscap.api.service.NotificacaoService;
+import br.gov.pe.reuso.api.event.RecursoCriadoEvent;
+import br.gov.pe.reuso.api.model.Notificacao;
+import br.gov.pe.reuso.api.repository.NotificacaoRepository;
+import br.gov.pe.reuso.api.repository.filter.NotificacaoFilter;
+import br.gov.pe.reuso.api.service.NotificacaoService;
 
 @RestController
 @RequestMapping("/notificacoes")

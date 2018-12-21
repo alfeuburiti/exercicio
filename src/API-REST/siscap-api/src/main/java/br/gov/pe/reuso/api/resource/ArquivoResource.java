@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.resource;
+package br.gov.pe.reuso.api.resource;
 
 import java.util.Optional;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.pi.tce.siscap.api.model.Arquivo;
-import br.gov.pi.tce.siscap.api.repository.ArquivoRepository;
+import br.gov.pe.reuso.api.model.Arquivo;
+import br.gov.pe.reuso.api.repository.ArquivoRepository;
 
 @RestController
 @RequestMapping("/arquivos")

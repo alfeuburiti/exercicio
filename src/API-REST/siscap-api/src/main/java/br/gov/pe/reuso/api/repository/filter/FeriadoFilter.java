@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.repository.filter;
+package br.gov.pe.reuso.api.repository.filter;
 
 import java.time.LocalDate;
 

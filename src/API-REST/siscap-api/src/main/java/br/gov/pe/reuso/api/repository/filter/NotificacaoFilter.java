@@ -1,6 +1,6 @@
-package br.gov.pi.tce.siscap.api.repository.filter;
+package br.gov.pe.reuso.api.repository.filter;
 
-import br.gov.pi.tce.siscap.api.model.enums.NotificacaoTipo;
+import br.gov.pe.reuso.api.model.enums.NotificacaoTipo;
 
 public class NotificacaoFilter {
 

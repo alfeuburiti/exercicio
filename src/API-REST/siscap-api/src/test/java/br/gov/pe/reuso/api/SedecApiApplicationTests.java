@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api;
+package br.gov.pe.reuso.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
-public class SiscapApiApplicationTests {
+public class SedecApiApplicationTests {
 
 	@Test
 	public void contextLoads() {

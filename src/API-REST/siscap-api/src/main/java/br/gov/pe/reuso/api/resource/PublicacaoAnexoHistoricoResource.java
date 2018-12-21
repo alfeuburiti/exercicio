@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.resource;
+package br.gov.pe.reuso.api.resource;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.pi.tce.siscap.api.model.PublicacaoAnexoHistorico;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoAnexoHistoricoRepository;
+import br.gov.pe.reuso.api.model.PublicacaoAnexoHistorico;
+import br.gov.pe.reuso.api.repository.PublicacaoAnexoHistoricoRepository;
 
 @RestController
 @RequestMapping("/historico_anexo_publicacao")

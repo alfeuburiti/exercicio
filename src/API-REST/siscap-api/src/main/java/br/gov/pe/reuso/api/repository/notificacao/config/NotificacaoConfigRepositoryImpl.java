@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.repository.notificacao.config;
+package br.gov.pe.reuso.api.repository.notificacao.config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import br.gov.pi.tce.siscap.api.model.NotificacaoConfig;
-import br.gov.pi.tce.siscap.api.repository.filter.NotificacaoConfigFilter;
+import br.gov.pe.reuso.api.model.NotificacaoConfig;
+import br.gov.pe.reuso.api.repository.filter.NotificacaoConfigFilter;
 
 public class NotificacaoConfigRepositoryImpl implements NotificacaoConfigRepositoryQuery {
 	

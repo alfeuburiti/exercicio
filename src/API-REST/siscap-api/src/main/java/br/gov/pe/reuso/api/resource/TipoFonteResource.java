@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.resource;
+package br.gov.pe.reuso.api.resource;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,12 +24,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.pi.tce.siscap.api.event.RecursoCriadoEvent;
-import br.gov.pi.tce.siscap.api.exceptionhandler.SiscapExceptionHandler.Erro;
-import br.gov.pi.tce.siscap.api.model.TipoFonte;
-import br.gov.pi.tce.siscap.api.repository.TipoFonteRepository;
-import br.gov.pi.tce.siscap.api.service.TipoFonteService;
-import br.gov.pi.tce.siscap.api.service.exception.TipoFonteComNomeJaExistenteException;
+import br.gov.pe.reuso.api.event.RecursoCriadoEvent;
+import br.gov.pe.reuso.api.exceptionhandler.SedecExceptionHandler.Erro;
+import br.gov.pe.reuso.api.model.TipoFonte;
+import br.gov.pe.reuso.api.repository.TipoFonteRepository;
+import br.gov.pe.reuso.api.service.TipoFonteService;
+import br.gov.pe.reuso.api.service.exception.TipoFonteComNomeJaExistenteException;
 
 @RestController
 @RequestMapping("/tiposfonte")

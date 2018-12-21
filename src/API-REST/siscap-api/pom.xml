@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>br.gov.pi.tce.siscap-api</groupId>
-	<artifactId>siscap-api</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<groupId>br.gov.pe.reuso.sedec</groupId>
+	<artifactId>sedec-api</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>siscap-api</name>
-	<description>Api para siscapi</description>
+	<name>sedec-api</name>
+	<description>Api para sedec</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.model;
+package br.gov.pe.reuso.api.model;
 
 import java.time.LocalDateTime;
 

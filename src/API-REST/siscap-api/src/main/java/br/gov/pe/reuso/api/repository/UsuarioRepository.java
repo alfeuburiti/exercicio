@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.repository;
+package br.gov.pe.reuso.api.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.gov.pi.tce.siscap.api.model.Usuario;
+import br.gov.pe.reuso.api.model.Usuario;
 
 @Transactional(readOnly=true)
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {

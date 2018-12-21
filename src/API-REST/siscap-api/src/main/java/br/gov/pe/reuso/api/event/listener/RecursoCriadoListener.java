@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.event.listener;
+package br.gov.pe.reuso.api.event.listener;
 
 import java.net.URI;
 
@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.gov.pi.tce.siscap.api.event.RecursoCriadoEvent;
+import br.gov.pe.reuso.api.event.RecursoCriadoEvent;
 
 @Component
 public class RecursoCriadoListener implements ApplicationListener<RecursoCriadoEvent> {

@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.resource;
+package br.gov.pe.reuso.api.resource;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,13 +24,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.pi.tce.siscap.api.event.RecursoCriadoEvent;
-import br.gov.pi.tce.siscap.api.exceptionhandler.SiscapExceptionHandler.Erro;
-import br.gov.pi.tce.siscap.api.model.Fonte;
-import br.gov.pi.tce.siscap.api.repository.FonteRepository;
-import br.gov.pi.tce.siscap.api.service.FonteService;
-import br.gov.pi.tce.siscap.api.service.exception.FonteComNomeJaExistenteException;
-import br.gov.pi.tce.siscap.api.service.exception.TipoFonteInexistenteOuInativaException;
+import br.gov.pe.reuso.api.event.RecursoCriadoEvent;
+import br.gov.pe.reuso.api.exceptionhandler.SedecExceptionHandler.Erro;
+import br.gov.pe.reuso.api.model.Fonte;
+import br.gov.pe.reuso.api.repository.FonteRepository;
+import br.gov.pe.reuso.api.service.FonteService;
+import br.gov.pe.reuso.api.service.exception.FonteComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.TipoFonteInexistenteOuInativaException;
 
 @RestController
 @RequestMapping("/fontes")

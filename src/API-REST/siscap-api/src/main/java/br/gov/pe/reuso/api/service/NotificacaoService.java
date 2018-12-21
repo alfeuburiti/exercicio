@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.service;
+package br.gov.pe.reuso.api.service;
 
 import java.util.Optional;
 
@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import br.gov.pi.tce.siscap.api.model.Notificacao;
-import br.gov.pi.tce.siscap.api.model.Publicacao;
-import br.gov.pi.tce.siscap.api.repository.NotificacaoRepository;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoRepository;
-import br.gov.pi.tce.siscap.api.service.exception.PublicacaoInexistenteException;
+import br.gov.pe.reuso.api.model.Notificacao;
+import br.gov.pe.reuso.api.model.Publicacao;
+import br.gov.pe.reuso.api.repository.NotificacaoRepository;
+import br.gov.pe.reuso.api.repository.PublicacaoRepository;
+import br.gov.pe.reuso.api.service.exception.PublicacaoInexistenteException;
 
 @Service
 public class NotificacaoService {

@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.service;
+package br.gov.pe.reuso.api.service;
 
 import java.util.Optional;
 
@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import br.gov.pi.tce.siscap.api.model.Feriado;
-import br.gov.pi.tce.siscap.api.model.Fonte;
-import br.gov.pi.tce.siscap.api.repository.FeriadoRepository;
-import br.gov.pi.tce.siscap.api.repository.FonteRepository;
-import br.gov.pi.tce.siscap.api.service.exception.FonteInexistenteOuInativaException;
+import br.gov.pe.reuso.api.model.Feriado;
+import br.gov.pe.reuso.api.model.Fonte;
+import br.gov.pe.reuso.api.repository.FeriadoRepository;
+import br.gov.pe.reuso.api.repository.FonteRepository;
+import br.gov.pe.reuso.api.service.exception.FonteInexistenteOuInativaException;
 
 @Service
 public class FeriadoService {

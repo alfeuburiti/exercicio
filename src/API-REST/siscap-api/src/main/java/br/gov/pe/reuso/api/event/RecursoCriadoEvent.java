@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.event;
+package br.gov.pe.reuso.api.event;
 
 import javax.servlet.http.HttpServletResponse;
 

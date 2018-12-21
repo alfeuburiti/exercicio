@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.repository;
+package br.gov.pe.reuso.api.repository;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -17,9 +17,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.gov.pi.tce.siscap.api.model.Feriado;
-import br.gov.pi.tce.siscap.api.model.Fonte;
-import br.gov.pi.tce.siscap.api.model.TipoFonte;
+import br.gov.pe.reuso.api.model.Feriado;
+import br.gov.pe.reuso.api.model.Fonte;
+import br.gov.pe.reuso.api.model.TipoFonte;
+import br.gov.pe.reuso.api.repository.FeriadoRepository;
+import br.gov.pe.reuso.api.repository.FonteRepository;
+import br.gov.pe.reuso.api.repository.TipoFonteRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

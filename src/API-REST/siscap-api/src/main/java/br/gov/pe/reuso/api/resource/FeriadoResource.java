@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.resource;
+package br.gov.pe.reuso.api.resource;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -26,13 +26,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.pi.tce.siscap.api.event.RecursoCriadoEvent;
-import br.gov.pi.tce.siscap.api.exceptionhandler.SiscapExceptionHandler.Erro;
-import br.gov.pi.tce.siscap.api.model.Feriado;
-import br.gov.pi.tce.siscap.api.repository.FeriadoRepository;
-import br.gov.pi.tce.siscap.api.repository.filter.FeriadoFilter;
-import br.gov.pi.tce.siscap.api.service.FeriadoService;
-import br.gov.pi.tce.siscap.api.service.exception.FonteInexistenteOuInativaException;
+import br.gov.pe.reuso.api.event.RecursoCriadoEvent;
+import br.gov.pe.reuso.api.exceptionhandler.SedecExceptionHandler.Erro;
+import br.gov.pe.reuso.api.model.Feriado;
+import br.gov.pe.reuso.api.repository.FeriadoRepository;
+import br.gov.pe.reuso.api.repository.filter.FeriadoFilter;
+import br.gov.pe.reuso.api.service.FeriadoService;
+import br.gov.pe.reuso.api.service.exception.FonteInexistenteOuInativaException;
 
 @RestController
 @RequestMapping("/feriados")

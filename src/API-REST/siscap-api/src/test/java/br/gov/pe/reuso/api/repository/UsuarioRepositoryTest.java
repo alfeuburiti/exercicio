@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.repository;
+package br.gov.pe.reuso.api.repository;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -16,7 +16,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.gov.pi.tce.siscap.api.model.Usuario;
+import br.gov.pe.reuso.api.model.Usuario;
+import br.gov.pe.reuso.api.repository.UsuarioRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

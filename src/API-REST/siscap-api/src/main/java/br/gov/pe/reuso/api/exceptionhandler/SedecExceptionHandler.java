@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.exceptionhandler;
+package br.gov.pe.reuso.api.exceptionhandler;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,10 +23,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import br.gov.pi.tce.siscap.api.service.exception.PublicacaoInexistenteException;
+import br.gov.pe.reuso.api.service.exception.PublicacaoInexistenteException;
 
 @ControllerAdvice
-public class SiscapExceptionHandler extends ResponseEntityExceptionHandler {
+public class SedecExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@Autowired
 	private MessageSource messageSource;

@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.repository.feriado;
+package br.gov.pe.reuso.api.repository.feriado;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +11,9 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import br.gov.pi.tce.siscap.api.model.Feriado;
-import br.gov.pi.tce.siscap.api.model.Fonte;
-import br.gov.pi.tce.siscap.api.repository.filter.FeriadoFilter;
+import br.gov.pe.reuso.api.model.Feriado;
+import br.gov.pe.reuso.api.model.Fonte;
+import br.gov.pe.reuso.api.repository.filter.FeriadoFilter;
 
 public class FeriadoRepositoryImpl implements FeriadoRepositoryQuery {
 	

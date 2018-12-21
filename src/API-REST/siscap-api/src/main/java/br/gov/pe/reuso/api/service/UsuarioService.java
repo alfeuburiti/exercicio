@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.service;
+package br.gov.pe.reuso.api.service;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import br.gov.pi.tce.siscap.api.model.Usuario;
-import br.gov.pi.tce.siscap.api.repository.UsuarioRepository;
-import br.gov.pi.tce.siscap.api.service.exception.UsuarioComLoginJaExistenteException;
+import br.gov.pe.reuso.api.model.Usuario;
+import br.gov.pe.reuso.api.repository.UsuarioRepository;
+import br.gov.pe.reuso.api.service.exception.UsuarioComLoginJaExistenteException;
 
 @Service
 public class UsuarioService {

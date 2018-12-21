@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.resource;
+package br.gov.pe.reuso.api.resource;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -26,14 +26,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import br.gov.pi.tce.siscap.api.event.RecursoCriadoEvent;
-import br.gov.pi.tce.siscap.api.exceptionhandler.SiscapExceptionHandler.Erro;
-import br.gov.pi.tce.siscap.api.model.Publicacao;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoRepository;
-import br.gov.pi.tce.siscap.api.repository.filter.PublicacaoFilter;
-import br.gov.pi.tce.siscap.api.service.PublicacaoService;
-import br.gov.pi.tce.siscap.api.service.exception.FiltroPublicacaoDataInvalidaException;
-import br.gov.pi.tce.siscap.api.service.exception.FonteInexistenteOuInativaException;
+import br.gov.pe.reuso.api.event.RecursoCriadoEvent;
+import br.gov.pe.reuso.api.exceptionhandler.SedecExceptionHandler.Erro;
+import br.gov.pe.reuso.api.model.Publicacao;
+import br.gov.pe.reuso.api.repository.PublicacaoRepository;
+import br.gov.pe.reuso.api.repository.filter.PublicacaoFilter;
+import br.gov.pe.reuso.api.service.PublicacaoService;
+import br.gov.pe.reuso.api.service.exception.FiltroPublicacaoDataInvalidaException;
+import br.gov.pe.reuso.api.service.exception.FonteInexistenteOuInativaException;
 
 @RestController
 @RequestMapping("/publicacoes")

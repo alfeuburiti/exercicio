@@ -1,10 +1,12 @@
 BEGIN TRANSACTION
 GO
 
-DROP TABLE IF EXISTS notificacao_usuarios
+IF OBJECT_ID('dbo.notificacao_usuarios', 'U') IS NOT NULL 
+  DROP TABLE dbo.notificacao_usuarios; 
 GO
 
-DROP TABLE IF EXISTS notificacao
+IF OBJECT_ID('dbo.notificacao', 'U') IS NOT NULL 
+  DROP TABLE dbo.notificacao; 
 GO
 
 CREATE TABLE [dbo].[notificacao](

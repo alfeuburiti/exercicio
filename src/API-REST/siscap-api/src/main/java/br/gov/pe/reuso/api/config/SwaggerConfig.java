@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.config;
+package br.gov.pe.reuso.api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,14 +21,14 @@ public class SwaggerConfig {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("br.gov.pi.tce.siscap.api.resource"))
+				.apis(RequestHandlerSelectors.basePackage("br.gov.pe.reuso.api.resource"))
 				.paths(PathSelectors.any()).build()
 				.apiInfo(apiInfo());
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("API Siscap")
-				.description("Documentação da API Siscap").version("1.0")
+		return new ApiInfoBuilder().title("API Sedec")
+				.description("Documentação da API Sedec").version("1.0")
 				.build();
 	}
 }

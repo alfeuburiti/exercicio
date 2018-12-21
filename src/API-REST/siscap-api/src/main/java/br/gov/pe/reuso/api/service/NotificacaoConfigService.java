@@ -1,12 +1,12 @@
-package br.gov.pi.tce.siscap.api.service;
+package br.gov.pe.reuso.api.service;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import br.gov.pi.tce.siscap.api.model.NotificacaoConfig;
-import br.gov.pi.tce.siscap.api.repository.NotificacaoConfigRepository;
+import br.gov.pe.reuso.api.model.NotificacaoConfig;
+import br.gov.pe.reuso.api.repository.NotificacaoConfigRepository;
 
 @Service
 public class NotificacaoConfigService {

@@ -1,9 +1,9 @@
-package br.gov.pi.tce.siscap.api.repository.feriado;
+package br.gov.pe.reuso.api.repository.feriado;
 
 import java.util.List;
 
-import br.gov.pi.tce.siscap.api.model.Feriado;
-import br.gov.pi.tce.siscap.api.repository.filter.FeriadoFilter;
+import br.gov.pe.reuso.api.model.Feriado;
+import br.gov.pe.reuso.api.repository.filter.FeriadoFilter;
 
 public interface FeriadoRepositoryQuery {
 	

@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.service;
+package br.gov.pe.reuso.api.service;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -11,14 +11,14 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import br.gov.pi.tce.siscap.api.model.Arquivo;
-import br.gov.pi.tce.siscap.api.model.Publicacao;
-import br.gov.pi.tce.siscap.api.model.PublicacaoAnexo;
-import br.gov.pi.tce.siscap.api.model.PublicacaoAnexoHistorico;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoAnexoHistoricoRepository;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoAnexoRepository;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoRepository;
-import br.gov.pi.tce.siscap.api.service.exception.PublicacaoInexistenteException;
+import br.gov.pe.reuso.api.model.Arquivo;
+import br.gov.pe.reuso.api.model.Publicacao;
+import br.gov.pe.reuso.api.model.PublicacaoAnexo;
+import br.gov.pe.reuso.api.model.PublicacaoAnexoHistorico;
+import br.gov.pe.reuso.api.repository.PublicacaoAnexoHistoricoRepository;
+import br.gov.pe.reuso.api.repository.PublicacaoAnexoRepository;
+import br.gov.pe.reuso.api.repository.PublicacaoRepository;
+import br.gov.pe.reuso.api.service.exception.PublicacaoInexistenteException;
 
 @Service
 public class PublicacaoAnexoService {

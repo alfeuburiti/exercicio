@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.repository.publicacao;
+package br.gov.pe.reuso.api.repository.publicacao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +14,15 @@ import javax.persistence.criteria.Root;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.gov.pi.tce.siscap.api.model.Fonte;
-import br.gov.pi.tce.siscap.api.model.Notificacao;
-import br.gov.pi.tce.siscap.api.model.Publicacao;
-import br.gov.pi.tce.siscap.api.model.PublicacaoAnexo;
-import br.gov.pi.tce.siscap.api.repository.PublicacaoAnexoRepository;
-import br.gov.pi.tce.siscap.api.repository.filter.NotificacaoFilter;
-import br.gov.pi.tce.siscap.api.repository.filter.PublicacaoFilter;
-import br.gov.pi.tce.siscap.api.repository.notificacao.NotificacaoRepositoryImpl;
-import br.gov.pi.tce.siscap.api.service.exception.FiltroPublicacaoDataInvalidaException;
+import br.gov.pe.reuso.api.model.Fonte;
+import br.gov.pe.reuso.api.model.Notificacao;
+import br.gov.pe.reuso.api.model.Publicacao;
+import br.gov.pe.reuso.api.model.PublicacaoAnexo;
+import br.gov.pe.reuso.api.repository.PublicacaoAnexoRepository;
+import br.gov.pe.reuso.api.repository.filter.NotificacaoFilter;
+import br.gov.pe.reuso.api.repository.filter.PublicacaoFilter;
+import br.gov.pe.reuso.api.repository.notificacao.NotificacaoRepositoryImpl;
+import br.gov.pe.reuso.api.service.exception.FiltroPublicacaoDataInvalidaException;
 
 public class PublicacaoRepositoryImpl implements PublicacaoRepositoryQuery {
 	

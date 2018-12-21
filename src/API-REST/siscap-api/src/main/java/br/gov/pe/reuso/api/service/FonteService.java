@@ -1,4 +1,4 @@
-package br.gov.pi.tce.siscap.api.service;
+package br.gov.pe.reuso.api.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import br.gov.pi.tce.siscap.api.model.Fonte;
-import br.gov.pi.tce.siscap.api.model.TipoFonte;
-import br.gov.pi.tce.siscap.api.repository.FonteRepository;
-import br.gov.pi.tce.siscap.api.repository.TipoFonteRepository;
-import br.gov.pi.tce.siscap.api.service.exception.FonteComNomeJaExistenteException;
-import br.gov.pi.tce.siscap.api.service.exception.TipoFonteInexistenteOuInativaException;
+import br.gov.pe.reuso.api.model.Fonte;
+import br.gov.pe.reuso.api.model.TipoFonte;
+import br.gov.pe.reuso.api.repository.FonteRepository;
+import br.gov.pe.reuso.api.repository.TipoFonteRepository;
+import br.gov.pe.reuso.api.service.exception.FonteComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.TipoFonteInexistenteOuInativaException;
 
 @Service
 public class FonteService {
