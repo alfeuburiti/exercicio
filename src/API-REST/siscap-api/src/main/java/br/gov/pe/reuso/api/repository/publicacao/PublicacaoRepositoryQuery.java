@@ -1,4 +1,4 @@
-package br.gov.pe.reuso.api.repository.publicacao;
+/*package br.gov.pe.reuso.api.repository.publicacao;
 
 import java.util.List;
 
@@ -10,3 +10,4 @@ public interface PublicacaoRepositoryQuery {
 	public List<Publicacao> filtrar(PublicacaoFilter publicacaoFilter ) throws Exception;
 
 }
+*/

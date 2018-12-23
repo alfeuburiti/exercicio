@@ -1,4 +1,4 @@
-package br.gov.pe.reuso.api.repository;
+/*package br.gov.pe.reuso.api.repository;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -122,3 +122,4 @@ public class FeriadoRepositoryTest {
 
 }
 
+*/

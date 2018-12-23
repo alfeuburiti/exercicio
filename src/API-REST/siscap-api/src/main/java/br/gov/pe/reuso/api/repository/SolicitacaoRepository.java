@@ -1,4 +1,4 @@
-package br.gov.pe.reuso.api.repository;
+/*package br.gov.pe.reuso.api.repository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -7,9 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import br.gov.pe.reuso.api.model.Feriado;
+
 import br.gov.pe.reuso.api.model.Solicitacao;
-import br.gov.pe.reuso.api.repository.feriado.FeriadoRepositoryQuery;
 
 public interface SolicitacaoRepository extends JpaRepository<Solicitacao, Long> {
 
@@ -26,3 +25,4 @@ public interface SolicitacaoRepository extends JpaRepository<Solicitacao, Long> 
 	List<Long> buscarPorDataEFonte(@Param("data") LocalDate data, @Param("idFonte") Long idFonte);
 
 }
+*/

@@ -1,6 +1,8 @@
 package br.gov.pe.reuso.api.model;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -10,7 +12,7 @@ public class Processo extends BaseEntity {
 	
 	private Long id;
 	private String numero;
-	private TipoProcesso tipoProcesso;
+	//private TipoProcesso tipoProcesso;
 	private Long idOrigem;
 
 
@@ -31,13 +33,15 @@ public class Processo extends BaseEntity {
 		this.numero = numero;
 	}
 
-	public TipoProcesso getTipoProcesso() {
-		return tipoProcesso;
-	}
-
-	public void setTipoProcesso(TipoProcesso tipoProcesso) {
-		this.tipoProcesso = tipoProcesso;
-	}
+	//public TipoProcesso getTipoProcesso() {
+	//	return tipoProcesso;
+	//}
+	//@NotNull
+	//@ManyToOne
+	//@JoinColumn(name="id_tipo_processo")
+	//public void setTipoProcesso(TipoProcesso tipoProcesso) {
+	//	this.tipoProcesso = tipoProcesso;
+	//}
 
 	public Long getIdOrigem() {
 		return idOrigem;

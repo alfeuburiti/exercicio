@@ -1,4 +1,4 @@
-package br.gov.pe.reuso.api.repository;
+/*package br.gov.pe.reuso.api.repository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -25,3 +25,4 @@ public interface TipoSolicitacaoRepository extends JpaRepository<TipoSolicitacao
 	List<Long> buscarPorDataEFonte(@Param("data") LocalDate data, @Param("idFonte") Long idFonte);
 
 }
+*/

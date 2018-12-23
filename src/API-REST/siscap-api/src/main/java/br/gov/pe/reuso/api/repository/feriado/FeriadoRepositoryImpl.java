@@ -1,5 +1,5 @@
 package br.gov.pe.reuso.api.repository.feriado;
-
+/*
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,4 +59,4 @@ public class FeriadoRepositoryImpl implements FeriadoRepositoryQuery {
 		return predicates.toArray(new Predicate[predicates.size()]);
 	}
 
-}
+}*/

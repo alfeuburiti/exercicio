@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import br.gov.pe.reuso.api.service.exception.PublicacaoInexistenteException;
+import br.gov.pe.reuso.api.service.exception.SolicitacaoInexistenteException;
 
 @ControllerAdvice
 public class SedecExceptionHandler extends ResponseEntityExceptionHandler {
@@ -75,9 +75,9 @@ public class SedecExceptionHandler extends ResponseEntityExceptionHandler {
 		return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
 	}
 	
-	@ExceptionHandler(PublicacaoInexistenteException.class)
-	public ResponseEntity<Object> handlePublicacaoInexistenteException(PublicacaoInexistenteException ex) {
-		String mensagemUsuario = messageSource.getMessage("publicacao.inexistente", null, LocaleContextHolder.getLocale());
+	@ExceptionHandler(SolicitacaoInexistenteException.class)
+	public ResponseEntity<Object> handleSolicitacaoInexistenteException(SolicitacaoInexistenteException ex) {
+		String mensagemUsuario = messageSource.getMessage("solicitacao.inexistente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemUsuario, mensagemDesenvolvedor));
 		

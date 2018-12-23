@@ -1,4 +1,4 @@
-package br.gov.pe.reuso.api.model;
+/*package br.gov.pe.reuso.api.model;
 
 import java.time.LocalDate;
 import javax.persistence.Entity;
@@ -16,15 +16,15 @@ public class Solicitacao extends BaseEntity {
 	private LocalDate data;	
 	private String hora;
 	private String descricao;
-	private Regional regional;
+	//private Regional regional;
 	private String localidade;
-	private Bairro bairro;
+	//private Bairro bairro;
 	private String endereco;
 	private String roteiro;
-	private Rpa RPA;
-	private MicroRegiao microRegiao;
-	private TipoSolicitacao tipoSolicitacao;
-	private Processo processo;
+	//private Rpa RPA;
+	//private MicroRegiao microRegiao;
+	//private TipoSolicitacao tipoSolicitacao;
+//	private Processo processo;
 	
 
 	public int getAno() {
@@ -139,7 +139,7 @@ public class Solicitacao extends BaseEntity {
 		this.processo = processo;
 	}
 
-	/*@NotNull
+	@NotNull
 	@Size(min=3, max=50)
 	public String getNome() {
 		return nome;
@@ -162,6 +162,7 @@ public class Solicitacao extends BaseEntity {
 	@Transient
 	public boolean isInativo( ) {
 		return !this.ativo;
-	}*/
+	}
 
 }
+*/

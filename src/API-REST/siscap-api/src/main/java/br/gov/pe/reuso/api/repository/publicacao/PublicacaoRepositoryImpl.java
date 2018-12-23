@@ -1,4 +1,4 @@
-package br.gov.pe.reuso.api.repository.publicacao;
+/*package br.gov.pe.reuso.api.repository.publicacao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -106,3 +106,4 @@ public class PublicacaoRepositoryImpl implements PublicacaoRepositoryQuery {
 	}
 
 }
+*/

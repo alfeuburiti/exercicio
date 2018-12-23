@@ -1,4 +1,4 @@
-package br.gov.pe.reuso.api.repository;
+/*package br.gov.pe.reuso.api.repository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -24,3 +24,4 @@ public interface ProcessoRepository extends JpaRepository<Processo, Long> {
 	List<Long> buscarPorDataEFonte(@Param("data") LocalDate data, @Param("idFonte") Long idFonte);
 
 }
+*/

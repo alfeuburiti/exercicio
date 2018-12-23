@@ -1,4 +1,4 @@
-package br.gov.pe.reuso.api.repository.notificacao.config;
+/*package br.gov.pe.reuso.api.repository.notificacao.config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,3 +49,4 @@ public class NotificacaoConfigRepositoryImpl implements NotificacaoConfigReposit
 	}
 
 }
+*/

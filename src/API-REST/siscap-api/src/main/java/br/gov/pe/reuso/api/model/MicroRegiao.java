@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="MICRO_REGIAO")
-public class MicroRegiao {
+public class MicroRegiao extends BaseEntity {
 
 	private Long id;
 	private String descricao;

@@ -1,4 +1,4 @@
-package br.gov.pe.reuso.api.repository.notificacao.config;
+/*package br.gov.pe.reuso.api.repository.notificacao.config;
 
 import java.util.List;
 
@@ -10,3 +10,4 @@ public interface NotificacaoConfigRepositoryQuery {
 	public List<NotificacaoConfig> filtrar(NotificacaoConfigFilter filter);
 
 }
+*/

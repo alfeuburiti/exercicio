@@ -19,10 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class BaseEntity {
 	
 	private Long id;
-	private LocalDateTime dataCriacao;
-	private Usuario usuarioCriacao;
-	private LocalDateTime dataAtualizacao;
-	private Usuario usuarioAtualizacao;
+
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -34,59 +31,14 @@ public class BaseEntity {
 		this.id = id;
 	}
 		
-	@Column(name="data_criacao")
-	@JsonIgnore
-	public LocalDateTime getDataCriacao() {
-		return dataCriacao;
-	}
-
-	public void setDataCriacao(LocalDateTime dataCriacao) {
-		this.dataCriacao = dataCriacao;
-	}
-
-	@OneToOne
-	@JoinColumn( name = "usuario_criacao" )
-	@JsonIgnore
-	public Usuario getUsuarioCriacao() {
-		return usuarioCriacao;
-	}
-
-	public void setUsuarioCriacao(Usuario usuarioCriacao) {
-		this.usuarioCriacao = usuarioCriacao;
-	}
-
-	@Column(name="data_atualizacao")
-	@JsonIgnore
-	public LocalDateTime getDataAtualizacao() {
-		return dataAtualizacao;
-	}
-
-	public void setDataAtualizacao(LocalDateTime dataAtualizacao) {
-		this.dataAtualizacao = dataAtualizacao;
-	}
-
-	@OneToOne
-	@JoinColumn( name = "usuario_atualizacao" )
-	@JsonIgnore
-	public Usuario getUsuarioAtualizacao() {
-		return usuarioAtualizacao;
-	}
-
-	public void setUsuarioAtualizacao(Usuario usuarioAtualizacao) {
-		this.usuarioAtualizacao = usuarioAtualizacao;
-	}
-
-	@PrePersist
-	public void prePersist() {
-		final LocalDateTime atual = LocalDateTime.now();
-		this.dataCriacao = atual;
-		this.dataAtualizacao = atual;
-	}
 	
-	@PreUpdate
-	public void preUpdate() {
-		this.dataAtualizacao = LocalDateTime.now();
-	}
+
+
+
+	
+
+
+
 	
 	@Transient
 	@JsonIgnore
