@@ -81,8 +81,6 @@ public class BairroResource {
 		return ResponseEntity.ok(bairroSalvo);
 	}
 	
-
-	
 	@ExceptionHandler(BairroComNomeJaExistenteException.class)
 	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(BairroComNomeJaExistenteException ex) {
 		String mensagemBairro = messageSource.getMessage("bairro.nome-ja-existente", null, LocaleContextHolder.getLocale());
