@@ -1,7 +1,7 @@
-/*package br.gov.pe.reuso.api.repository;
+package br.gov.pe.reuso.api.repository;
 
-import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,17 +12,9 @@ import br.gov.pe.reuso.api.model.Rpa;
 
 public interface RpaRepository extends JpaRepository<Rpa, Long> {
 
-	@Query("SELECT f.id FROM Feriado f left join f.fontes ff "
-			+ " WHERE (f.todasFontes = true OR ff.id = :idFonte) "
-			+ "AND ("
-				+ "f.data = :data "
-				+ "OR ("
-					+ "f.fixo = true "
-					+ "AND MONTH(f.data) = MONTH(:data) "
-					+ "AND DAY(f.data) = DAY(:data) "
-				+ ")"
-			+ ")")
-	List<Long> buscarPorDataEFonte(@Param("data") LocalDate data, @Param("idFonte") Long idFonte);
+	Optional<Rpa> findByDescricao(String descricao);
+	
+	@Query("SELECT rpa FROM Rpa rpa WHERE rpa.descricao = :descricao AND rpa.id != :idDescricao")
+	List<Rpa> buscarPorNomeComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
 
 }
-*/

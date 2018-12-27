@@ -1,29 +1,20 @@
-/*package br.gov.pe.reuso.api.repository;
+package br.gov.pe.reuso.api.repository;
 
-import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import br.gov.pe.reuso.api.model.MicroRegiao;
 
-import br.gov.pe.reuso.api.model.Regional;
 
+public interface MicroRegiaoRepository extends JpaRepository<MicroRegiao, Long> {
 
-public interface MicroRegiaoRepository extends JpaRepository<Regional, Long> {
-
-	@Query("SELECT f.id FROM Feriado f left join f.fontes ff "
-			+ " WHERE (f.todasFontes = true OR ff.id = :idFonte) "
-			+ "AND ("
-				+ "f.data = :data "
-				+ "OR ("
-					+ "f.fixo = true "
-					+ "AND MONTH(f.data) = MONTH(:data) "
-					+ "AND DAY(f.data) = DAY(:data) "
-				+ ")"
-			+ ")")
-	List<Long> buscarPorDataEFonte(@Param("data") LocalDate data, @Param("idFonte") Long idFonte);
+	Optional<MicroRegiao> findByDescricao(String descricao);
+	
+	@Query("SELECT mr FROM MicroRegiao mr WHERE mr.descricao = :descricao AND mr.id != :idDescricao")
+	List<MicroRegiao> buscarPorNomeComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
 
 }
-*/
