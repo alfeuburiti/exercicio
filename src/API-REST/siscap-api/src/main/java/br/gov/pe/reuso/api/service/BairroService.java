@@ -14,11 +14,8 @@ import br.gov.pe.reuso.api.service.exception.BairroComNomeJaExistenteException;
 @Service
 public class BairroService {
 
-	
 	@Autowired
 	private BairroRepository bairroRepository;
-	
-
 	
 	public Bairro atualizar(Long id, Bairro bairro) {
 		Bairro bairroSalvo = buscarBairroPeloCodigo(id);
@@ -29,7 +26,6 @@ public class BairroService {
 		return bairroSalvo;
 	}
 	
-
 	public Bairro adicionar(Bairro bairro) {
 
 		validarNomeBairroDuplicado(bairro);
@@ -51,10 +47,6 @@ public class BairroService {
 			}
 		}
 	}
-	
-	
-
-
 
 	private Bairro buscarBairroPeloCodigo(Long id) {
 		Bairro bairroSalvo = bairroRepository.findById(id).
