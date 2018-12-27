@@ -1,8 +1,14 @@
-/*package br.gov.pe.reuso.api.model;
+package br.gov.pe.reuso.api.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -12,19 +18,18 @@ public class Solicitacao extends BaseEntity {
 	
 	private int ano;
 	private int mes;
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private LocalDate data;	
-	private String hora;
+	@DateTimeFormat(pattern="dd/MM/yyyy HH:mm:ss")
+	private LocalDateTime momento;	
 	private String descricao;
-	//private Regional regional;
+	private Regional regional;
 	private String localidade;
-	//private Bairro bairro;
+	private Bairro bairro;
 	private String endereco;
 	private String roteiro;
-	//private Rpa RPA;
-	//private MicroRegiao microRegiao;
-	//private TipoSolicitacao tipoSolicitacao;
-//	private Processo processo;
+	private Rpa RPA;
+	private MicroRegiao microRegiao;
+	private TipoSolicitacao tipoSolicitacao;
+	private Processo processo;
 	
 
 	public int getAno() {
@@ -43,126 +48,106 @@ public class Solicitacao extends BaseEntity {
 		this.mes = mes;
 	}
 
-	public LocalDate getData() {
-		return data;
+	public void setMomento(LocalDateTime momento) {
+		this.momento = momento;
+	}
+	
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	public void setRegional(Regional regional) {
+		this.regional = regional;
 	}
 
-	public void setData(LocalDate data) {
-		this.data = data;
+	public void setBairro(Bairro bairro) {
+		this.bairro = bairro;
 	}
-
-	public String getHora() {
-		return hora;
+	
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
-
-	public void setHora(String hora) {
-		this.hora = hora;
+	
+	public void setRPA(Rpa rPA) {
+		RPA = rPA;
+	}
+	
+	public void setMicroRegiao(MicroRegiao microRegiao) {
+		this.microRegiao = microRegiao;
+	}
+	
+	public void setRoteiro(String roteiro) {
+		this.roteiro = roteiro;
+	}
+	
+	public void setLocalidade(String localidade) {
+		this.localidade = localidade;
+	}
+	
+	public void setTipoSolicitacao(TipoSolicitacao tipoSolicitacao) {
+		this.tipoSolicitacao = tipoSolicitacao;
+	}
+	
+	public void setProcesso(Processo processo) {
+		this.processo = processo;
+	}
+	
+	public LocalDateTime getMomento() {
+		return momento;
 	}
 
 	public String getDescricao() {
 		return descricao;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
 	public Regional getRegional() {
 		return regional;
-	}
-
-	public void setRegional(Regional regional) {
-		this.regional = regional;
 	}
 
 	public String getLocalidade() {
 		return localidade;
 	}
 
-	public void setLocalidade(String localidade) {
-		this.localidade = localidade;
-	}
-
 	public Bairro getBairro() {
 		return bairro;
-	}
-
-	public void setBairro(Bairro bairro) {
-		this.bairro = bairro;
 	}
 
 	public String getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
 	public String getRoteiro() {
 		return roteiro;
 	}
 
-	public void setRoteiro(String roteiro) {
-		this.roteiro = roteiro;
-	}
-
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name="id_rpa")
 	public Rpa getRPA() {
 		return RPA;
 	}
 
-	public void setRPA(Rpa rPA) {
-		RPA = rPA;
-	}
-
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name="id_micro_regiao")
 	public MicroRegiao getMicroRegiao() {
 		return microRegiao;
 	}
 
-	public void setMicroRegiao(MicroRegiao microRegiao) {
-		this.microRegiao = microRegiao;
-	}
-
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name="id_tipo_solicitacao")
 	public TipoSolicitacao getTipoSolicitacao() {
 		return tipoSolicitacao;
 	}
-
-	public void setTipoSolicitacao(TipoSolicitacao tipoSolicitacao) {
-		this.tipoSolicitacao = tipoSolicitacao;
-	}
-
+	
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name="id_processo")
 	public Processo getProcesso() {
 		return processo;
 	}
-
-	public void setProcesso(Processo processo) {
-		this.processo = processo;
-	}
-
-	@NotNull
-	@Size(min=3, max=50)
-	public String getNome() {
-		return nome;
-	}
 	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	@NotNull
-	public Boolean getAtivo() {
-		return ativo;
-	}
-
-	public void setAtivo(Boolean ativo) {
-		this.ativo = ativo;
-	}
-
-	@JsonIgnore
-	@Transient
-	public boolean isInativo( ) {
-		return !this.ativo;
-	}
-
 }
-*/
+
+

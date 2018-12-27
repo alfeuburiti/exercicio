@@ -1,17 +1,11 @@
 package br.gov.pe.reuso.api.model;
 
-import java.time.LocalDateTime;
-
-import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,8 +14,8 @@ public class BaseEntity {
 	
 	private Long id;
 
-
 	@Id
+	@NotNull
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Long getId() {
 		return id;
@@ -30,15 +24,6 @@ public class BaseEntity {
 	public void setId(Long id) {
 		this.id = id;
 	}
-		
-	
-
-
-
-	
-
-
-
 	
 	@Transient
 	@JsonIgnore
