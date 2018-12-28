@@ -31,7 +31,6 @@ public class Solicitacao extends BaseEntity {
 	private TipoSolicitacao tipoSolicitacao;
 	private Processo processo;
 	
-
 	public int getAno() {
 		return ano;
 	}
