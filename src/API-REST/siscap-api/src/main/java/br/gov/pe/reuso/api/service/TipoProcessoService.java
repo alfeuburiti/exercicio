@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.gov.pe.reuso.api.model.TipoProcesso;
 import br.gov.pe.reuso.api.repository.TipoProcessoRepository;
-import br.gov.pe.reuso.api.service.exception.TipoProcessoComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.TipoProcessoComDescricaoJaExistenteException;
 
 @Service
 public class TipoProcessoService {
@@ -20,7 +20,7 @@ public class TipoProcessoService {
 	public TipoProcesso atualizar(Long id, TipoProcesso tipoProcesso) {
 		TipoProcesso tipoProcessoSalvo = buscarTipoProcessoPeloCodigo(id);
 		BeanUtils.copyProperties(tipoProcesso, tipoProcessoSalvo, "id", "dataCriacao", "usuarioCriacao");
-		validarNomeTipoProcessoDuplicado(tipoProcessoSalvo);
+		validarDescricaoTipoProcessoDuplicado(tipoProcessoSalvo);
 		tipoProcessoRepository.save(tipoProcessoSalvo);
 		
 		return tipoProcessoSalvo;
@@ -28,22 +28,22 @@ public class TipoProcessoService {
 
 	public TipoProcesso adicionar(TipoProcesso tipoProcesso) {
 
-		validarNomeTipoProcessoDuplicado(tipoProcesso);
+		validarDescricaoTipoProcessoDuplicado(tipoProcesso);
 		TipoProcesso tipoProcessoSalvo = tipoProcessoRepository.save(tipoProcesso);
 		
 		return tipoProcessoSalvo;
 	}
 
-	private void validarNomeTipoProcessoDuplicado(TipoProcesso tipoProcesso) {
+	private void validarDescricaoTipoProcessoDuplicado(TipoProcesso tipoProcesso) {
 		if (tipoProcesso.isAlterando()) {
 			List<TipoProcesso> tipoProcessos = tipoProcessoRepository
-					.buscarPorNomeComIdDiferenteDoInformado(tipoProcesso.getDescricao(), tipoProcesso.getId());
+					.buscarPorDescricaoComIdDiferenteDoInformado(tipoProcesso.getDescricao(), tipoProcesso.getId());
 			if (!tipoProcessos.isEmpty()) {
-				throw new TipoProcessoComNomeJaExistenteException();
+				throw new TipoProcessoComDescricaoJaExistenteException();
 			}
 		} else {
 			if(tipoProcessoRepository.findByDescricao(tipoProcesso.getDescricao()).isPresent()) {
-				throw new TipoProcessoComNomeJaExistenteException();
+				throw new TipoProcessoComDescricaoJaExistenteException();
 			}
 		}
 	}

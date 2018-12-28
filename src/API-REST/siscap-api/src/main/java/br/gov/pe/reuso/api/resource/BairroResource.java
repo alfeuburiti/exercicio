@@ -29,7 +29,7 @@ import br.gov.pe.reuso.api.exceptionhandler.SedecExceptionHandler.Erro;
 import br.gov.pe.reuso.api.model.Bairro;
 import br.gov.pe.reuso.api.repository.BairroRepository;
 import br.gov.pe.reuso.api.service.BairroService;
-import br.gov.pe.reuso.api.service.exception.BairroComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.BairroComDescricaoJaExistenteException;
 
 
 @RestController
@@ -81,8 +81,8 @@ public class BairroResource {
 		return ResponseEntity.ok(bairroSalvo);
 	}
 	
-	@ExceptionHandler(BairroComNomeJaExistenteException.class)
-	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(BairroComNomeJaExistenteException ex) {
+	@ExceptionHandler(BairroComDescricaoJaExistenteException.class)
+	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(BairroComDescricaoJaExistenteException ex) {
 		String mensagemBairro = messageSource.getMessage("bairro.nome-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemBairro, mensagemDesenvolvedor));

@@ -15,6 +15,6 @@ public interface RegionalRepository extends JpaRepository<Regional, Long> {
 	Optional<Regional> findByDescricao(String descricao);
 	
 	@Query("SELECT r FROM Regional r WHERE r.descricao = :descricao AND r.id != :idDescricao")
-	List<Regional> buscarPorNomeComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
+	List<Regional> buscarPorDescricaoComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
 
 }

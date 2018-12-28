@@ -15,6 +15,6 @@ public interface MicroRegiaoRepository extends JpaRepository<MicroRegiao, Long> 
 	Optional<MicroRegiao> findByDescricao(String descricao);
 	
 	@Query("SELECT mr FROM MicroRegiao mr WHERE mr.descricao = :descricao AND mr.id != :idDescricao")
-	List<MicroRegiao> buscarPorNomeComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
+	List<MicroRegiao> buscarPorDescricaoComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
 
 }

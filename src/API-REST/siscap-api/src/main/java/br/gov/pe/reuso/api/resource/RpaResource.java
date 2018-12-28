@@ -29,7 +29,7 @@ import br.gov.pe.reuso.api.exceptionhandler.SedecExceptionHandler.Erro;
 import br.gov.pe.reuso.api.model.Rpa;
 import br.gov.pe.reuso.api.repository.RpaRepository;
 import br.gov.pe.reuso.api.service.RpaService;
-import br.gov.pe.reuso.api.service.exception.RpaComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.RpaComDescricaoJaExistenteException;
 
 
 @RestController
@@ -81,8 +81,8 @@ public class RpaResource {
 		return ResponseEntity.ok(rpaSalvo);
 	}
 	
-	@ExceptionHandler(RpaComNomeJaExistenteException.class)
-	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(RpaComNomeJaExistenteException ex) {
+	@ExceptionHandler(RpaComDescricaoJaExistenteException.class)
+	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(RpaComDescricaoJaExistenteException ex) {
 		String mensagemRpa = messageSource.getMessage("rpa.nome-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemRpa, mensagemDesenvolvedor));

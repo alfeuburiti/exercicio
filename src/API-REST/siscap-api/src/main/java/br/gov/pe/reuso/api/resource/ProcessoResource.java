@@ -26,68 +26,66 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.gov.pe.reuso.api.event.RecursoCriadoEvent;
 import br.gov.pe.reuso.api.exceptionhandler.SedecExceptionHandler.Erro;
-import br.gov.pe.reuso.api.model.Regional;
-import br.gov.pe.reuso.api.repository.RegionalRepository;
-import br.gov.pe.reuso.api.service.RegionalService;
-import br.gov.pe.reuso.api.service.exception.RegionalComDescricaoJaExistenteException;
-
+import br.gov.pe.reuso.api.model.Processo;
+import br.gov.pe.reuso.api.repository.ProcessoRepository;
+import br.gov.pe.reuso.api.service.ProcessoService;
+import br.gov.pe.reuso.api.service.exception.ProcessoComNumeroJaExistenteException;
 
 @RestController
-@RequestMapping("/regionais")
-public class RegionalResource {
+@RequestMapping("/processos")
+public class ProcessoResource {
 
 	@Autowired
-	private RegionalRepository regionalRepository;
+	private ProcessoRepository processoRepository;
 	
 	@Autowired
 	private ApplicationEventPublisher publisher;
 	
 	@Autowired
-	private RegionalService regionalService;
+	private ProcessoService processoService;
 	
 	@Autowired
 	private MessageSource messageSource;
 	
 	@GetMapping
-	public List<Regional> listar() {
-		return regionalRepository.findAll();
+	public List<Processo> listar() {
+		return processoRepository.findAll();
 	}
 	
 	@PostMapping
-	public ResponseEntity<Regional> criar(@Valid @RequestBody Regional regional, HttpServletResponse response) {
-		Regional regionalSalvo = regionalService.adicionar(regional);
+	public ResponseEntity<Processo> criar(@Valid @RequestBody Processo processo, HttpServletResponse response) {
+		Processo processoSalvo = processoService.adicionar(processo);
 		
-		publisher.publishEvent(new RecursoCriadoEvent(this, response, regionalSalvo.getId()));
-		return ResponseEntity.status(HttpStatus.CREATED).body(regionalSalvo);
+		publisher.publishEvent(new RecursoCriadoEvent(this, response, processoSalvo.getId()));
+		return ResponseEntity.status(HttpStatus.CREATED).body(processoSalvo);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Regional> buscarPeloId(@PathVariable Long id) {
-		Optional<Regional> regionalOptional = regionalRepository.findById(id);
+	public ResponseEntity<Processo> buscarPeloId(@PathVariable Long id) {
+		Optional<Processo> processoOptional = processoRepository.findById(id);
 		
-		return regionalOptional.isPresent() ? ResponseEntity.ok(regionalOptional.get()) : ResponseEntity.notFound().build();
+		return processoOptional.isPresent() ? ResponseEntity.ok(processoOptional.get()) : ResponseEntity.notFound().build();
 	}
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(code=HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long id) {
-		regionalRepository.deleteById(id);
+		processoRepository.deleteById(id);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Regional> atualizar(@PathVariable Long id, @Valid @RequestBody Regional regional) {
-		Regional regionalSalvo = regionalService.atualizar(id, regional);
+	public ResponseEntity<Processo> atualizar(@PathVariable Long id, @Valid @RequestBody Processo processo) {
+		Processo processoSalvo = processoService.atualizar(id, processo);
 		
-		return ResponseEntity.ok(regionalSalvo);
+		return ResponseEntity.ok(processoSalvo);
 	}
 	
-	@ExceptionHandler(RegionalComDescricaoJaExistenteException.class)
-	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(RegionalComDescricaoJaExistenteException ex) {
-		String mensagemRegional = messageSource.getMessage("regional.nome-ja-existente", null, LocaleContextHolder.getLocale());
+	@ExceptionHandler(ProcessoComNumeroJaExistenteException.class)
+	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(ProcessoComNumeroJaExistenteException ex) {
+		String mensagemProcesso = messageSource.getMessage("processo.numero-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
-		List<Erro> erros = Arrays.asList(new Erro(mensagemRegional, mensagemDesenvolvedor));
+		List<Erro> erros = Arrays.asList(new Erro(mensagemProcesso, mensagemDesenvolvedor));
 		
 		return ResponseEntity.badRequest().body(erros);
 	}
-	
 }

@@ -1,6 +1,6 @@
 package br.gov.pe.reuso.api.service.exception;
 
-public class TipoSolicitacaoComNomeJaExistenteException extends RuntimeException {
+public class TipoSolicitacaoComDescricaoJaExistenteException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 

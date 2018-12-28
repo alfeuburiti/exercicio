@@ -15,6 +15,6 @@ public interface RpaRepository extends JpaRepository<Rpa, Long> {
 	Optional<Rpa> findByDescricao(String descricao);
 	
 	@Query("SELECT rpa FROM Rpa rpa WHERE rpa.descricao = :descricao AND rpa.id != :idDescricao")
-	List<Rpa> buscarPorNomeComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
+	List<Rpa> buscarPorDescricaoComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
 
 }

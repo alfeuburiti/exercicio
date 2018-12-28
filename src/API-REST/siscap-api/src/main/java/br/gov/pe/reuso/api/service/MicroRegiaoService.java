@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.gov.pe.reuso.api.model.MicroRegiao;
 import br.gov.pe.reuso.api.repository.MicroRegiaoRepository;
-import br.gov.pe.reuso.api.service.exception.MicroRegiaoComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.MicroRegiaoComDescricaoJaExistenteException;
 
 
 @Service
@@ -21,7 +21,7 @@ public class MicroRegiaoService {
 	public MicroRegiao atualizar(Long id, MicroRegiao microRegiao) {
 		MicroRegiao microRegiaoSalvo = buscarMicroRegiaoPeloCodigo(id);
 		BeanUtils.copyProperties(microRegiao, microRegiaoSalvo, "id", "dataCriacao", "usuarioCriacao");
-		validarNomeMicroRegiaoDuplicado(microRegiaoSalvo);
+		validarDescricaoMicroRegiaoDuplicado(microRegiaoSalvo);
 		microRegiaoRepository.save(microRegiaoSalvo);
 		
 		return microRegiaoSalvo;
@@ -29,22 +29,22 @@ public class MicroRegiaoService {
 
 	public MicroRegiao adicionar(MicroRegiao microRegiao) {
 
-		validarNomeMicroRegiaoDuplicado(microRegiao);
+		validarDescricaoMicroRegiaoDuplicado(microRegiao);
 		MicroRegiao microRegiaoSalvo = microRegiaoRepository.save(microRegiao);
 		
 		return microRegiaoSalvo;
 	}
 
-	private void validarNomeMicroRegiaoDuplicado(MicroRegiao microRegiao) {
+	private void validarDescricaoMicroRegiaoDuplicado(MicroRegiao microRegiao) {
 		if (microRegiao.isAlterando()) {
 			List<MicroRegiao> microRegioes = microRegiaoRepository
-					.buscarPorNomeComIdDiferenteDoInformado(microRegiao.getDescricao(), microRegiao.getId());
+					.buscarPorDescricaoComIdDiferenteDoInformado(microRegiao.getDescricao(), microRegiao.getId());
 			if (!microRegioes.isEmpty()) {
-				throw new MicroRegiaoComNomeJaExistenteException();
+				throw new MicroRegiaoComDescricaoJaExistenteException();
 			}
 		} else {
 			if(microRegiaoRepository.findByDescricao(microRegiao.getDescricao()).isPresent()) {
-				throw new MicroRegiaoComNomeJaExistenteException();
+				throw new MicroRegiaoComDescricaoJaExistenteException();
 			}
 		}
 	}

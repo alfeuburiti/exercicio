@@ -15,6 +15,6 @@ public interface BairroRepository extends JpaRepository<Bairro, Long> {
 	Optional<Bairro> findByDescricao(String descricao);
 	
 	@Query("SELECT ba FROM Bairro ba WHERE ba.descricao = :descricao AND ba.id != :idDescricao")
-	List<Bairro> buscarPorNomeComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
+	List<Bairro> buscarPorDescricaoComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
 
 }

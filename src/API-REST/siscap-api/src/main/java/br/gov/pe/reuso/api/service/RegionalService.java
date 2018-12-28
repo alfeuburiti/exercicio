@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.gov.pe.reuso.api.model.Regional;
 import br.gov.pe.reuso.api.repository.RegionalRepository;
-import br.gov.pe.reuso.api.service.exception.RegionalComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.RegionalComDescricaoJaExistenteException;
 
 @Service
 public class RegionalService {
@@ -20,7 +20,7 @@ public class RegionalService {
 	public Regional atualizar(Long id, Regional regional) {
 		Regional regionalSalvo = buscarRegionalPeloCodigo(id);
 		BeanUtils.copyProperties(regional, regionalSalvo, "id", "dataCriacao", "usuarioCriacao");
-		validarNomeRegionalDuplicado(regionalSalvo);
+		validarDescricaoRegionalDuplicado(regionalSalvo);
 		regionalRepository.save(regionalSalvo);
 		
 		return regionalSalvo;
@@ -28,22 +28,22 @@ public class RegionalService {
 	
 	public Regional adicionar(Regional regional) {
 
-		validarNomeRegionalDuplicado(regional);
+		validarDescricaoRegionalDuplicado(regional);
 		Regional regionalSalvo = regionalRepository.save(regional);
 		
 		return regionalSalvo;
 	}
 
-	private void validarNomeRegionalDuplicado(Regional regional) {
+	private void validarDescricaoRegionalDuplicado(Regional regional) {
 		if (regional.isAlterando()) {
 			List<Regional> regionais = regionalRepository
-					.buscarPorNomeComIdDiferenteDoInformado(regional.getDescricao(), regional.getId());
+					.buscarPorDescricaoComIdDiferenteDoInformado(regional.getDescricao(), regional.getId());
 			if (!regionais.isEmpty()) {
-				throw new RegionalComNomeJaExistenteException();
+				throw new RegionalComDescricaoJaExistenteException();
 			}
 		} else {
 			if(regionalRepository.findByDescricao(regional.getDescricao()).isPresent()) {
-				throw new RegionalComNomeJaExistenteException();
+				throw new RegionalComDescricaoJaExistenteException();
 			}
 		}
 	}

@@ -29,7 +29,7 @@ import br.gov.pe.reuso.api.exceptionhandler.SedecExceptionHandler.Erro;
 import br.gov.pe.reuso.api.model.MicroRegiao;
 import br.gov.pe.reuso.api.repository.MicroRegiaoRepository;
 import br.gov.pe.reuso.api.service.MicroRegiaoService;
-import br.gov.pe.reuso.api.service.exception.MicroRegiaoComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.MicroRegiaoComDescricaoJaExistenteException;
 
 @RestController
 @RequestMapping("/micro-regioes")
@@ -80,8 +80,8 @@ public class MicroRegiaoResource {
 		return ResponseEntity.ok(microRegiaoSalvo);
 	}
 	
-	@ExceptionHandler(MicroRegiaoComNomeJaExistenteException.class)
-	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(MicroRegiaoComNomeJaExistenteException ex) {
+	@ExceptionHandler(MicroRegiaoComDescricaoJaExistenteException.class)
+	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(MicroRegiaoComDescricaoJaExistenteException ex) {
 		String mensagemMicroRegiao = messageSource.getMessage("microRegiao.nome-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemMicroRegiao, mensagemDesenvolvedor));

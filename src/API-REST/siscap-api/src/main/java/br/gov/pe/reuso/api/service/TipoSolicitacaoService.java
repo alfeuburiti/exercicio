@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.gov.pe.reuso.api.model.TipoSolicitacao;
 import br.gov.pe.reuso.api.repository.TipoSolicitacaoRepository;
-import br.gov.pe.reuso.api.service.exception.TipoSolicitacaoComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.TipoSolicitacaoComDescricaoJaExistenteException;
 
 @Service
 public class TipoSolicitacaoService {
@@ -20,7 +20,7 @@ public class TipoSolicitacaoService {
 	public TipoSolicitacao atualizar(Long id, TipoSolicitacao tipoSolicitacao) {
 		TipoSolicitacao tipoSolicitacaoSalvo = buscarTipoSolicitacaoPeloCodigo(id);
 		BeanUtils.copyProperties(tipoSolicitacao, tipoSolicitacaoSalvo, "id", "dataCriacao", "usuarioCriacao");
-		validarNomeTipoSolicitacaoDuplicado(tipoSolicitacaoSalvo);
+		validarDescricaoTipoSolicitacaoDuplicado(tipoSolicitacaoSalvo);
 		tipoSolicitacaoRepository.save(tipoSolicitacaoSalvo);
 		
 		return tipoSolicitacaoSalvo;
@@ -28,22 +28,22 @@ public class TipoSolicitacaoService {
 
 	public TipoSolicitacao adicionar(TipoSolicitacao tipoSolicitacao) {
 
-		validarNomeTipoSolicitacaoDuplicado(tipoSolicitacao);
+		validarDescricaoTipoSolicitacaoDuplicado(tipoSolicitacao);
 		TipoSolicitacao tipoSolicitacaoSalvo = tipoSolicitacaoRepository.save(tipoSolicitacao);
 		
 		return tipoSolicitacaoSalvo;
 	}
 
-	private void validarNomeTipoSolicitacaoDuplicado(TipoSolicitacao tipoSolicitacao) {
+	private void validarDescricaoTipoSolicitacaoDuplicado(TipoSolicitacao tipoSolicitacao) {
 		if (tipoSolicitacao.isAlterando()) {
 			List<TipoSolicitacao> tipoSolicitacoes = tipoSolicitacaoRepository
-					.buscarPorNomeComIdDiferenteDoInformado(tipoSolicitacao.getDescricao(), tipoSolicitacao.getId());
+					.buscarPorDescricaoComIdDiferenteDoInformado(tipoSolicitacao.getDescricao(), tipoSolicitacao.getId());
 			if (!tipoSolicitacoes.isEmpty()) {
-				throw new TipoSolicitacaoComNomeJaExistenteException();
+				throw new TipoSolicitacaoComDescricaoJaExistenteException();
 			}
 		} else {
 			if(tipoSolicitacaoRepository.findByDescricao(tipoSolicitacao.getDescricao()).isPresent()) {
-				throw new TipoSolicitacaoComNomeJaExistenteException();
+				throw new TipoSolicitacaoComDescricaoJaExistenteException();
 			}
 		}
 	}

@@ -15,6 +15,6 @@ public interface TipoSolicitacaoRepository extends JpaRepository<TipoSolicitacao
 	Optional<TipoSolicitacao> findByDescricao(String descricao);
 	
 	@Query("SELECT ts FROM TipoSolicitacao ts WHERE ts.descricao = :descricao AND ts.id != :idDescricao")
-	List<TipoSolicitacao> buscarPorNomeComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
+	List<TipoSolicitacao> buscarPorDescricaoComIdDiferenteDoInformado(@Param("descricao") String descricao, @Param("idDescricao") Long idDescricao);
 
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.gov.pe.reuso.api.model.Bairro;
 import br.gov.pe.reuso.api.repository.BairroRepository;
-import br.gov.pe.reuso.api.service.exception.BairroComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.BairroComDescricaoJaExistenteException;
 
 @Service
 public class BairroService {
@@ -20,7 +20,7 @@ public class BairroService {
 	public Bairro atualizar(Long id, Bairro bairro) {
 		Bairro bairroSalvo = buscarBairroPeloCodigo(id);
 		BeanUtils.copyProperties(bairro, bairroSalvo, "id", "dataCriacao", "usuarioCriacao");
-		validarNomeBairroDuplicado(bairroSalvo);
+		validarDescricaoBairroDuplicado(bairroSalvo);
 		bairroRepository.save(bairroSalvo);
 		
 		return bairroSalvo;
@@ -28,22 +28,22 @@ public class BairroService {
 	
 	public Bairro adicionar(Bairro bairro) {
 
-		validarNomeBairroDuplicado(bairro);
+		validarDescricaoBairroDuplicado(bairro);
 		Bairro bairroSalvo = bairroRepository.save(bairro);
 		
 		return bairroSalvo;
 	}
 
-	private void validarNomeBairroDuplicado(Bairro bairro) {
+	private void validarDescricaoBairroDuplicado(Bairro bairro) {
 		if (bairro.isAlterando()) {
 			List<Bairro> bairros = bairroRepository
-					.buscarPorNomeComIdDiferenteDoInformado(bairro.getDescricao(), bairro.getId());
+					.buscarPorDescricaoComIdDiferenteDoInformado(bairro.getDescricao(), bairro.getId());
 			if (!bairros.isEmpty()) {
-				throw new BairroComNomeJaExistenteException();
+				throw new BairroComDescricaoJaExistenteException();
 			}
 		} else {
 			if(bairroRepository.findByDescricao(bairro.getDescricao()).isPresent()) {
-				throw new BairroComNomeJaExistenteException();
+				throw new BairroComDescricaoJaExistenteException();
 			}
 		}
 	}

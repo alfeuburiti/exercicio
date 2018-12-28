@@ -29,7 +29,7 @@ import br.gov.pe.reuso.api.exceptionhandler.SedecExceptionHandler.Erro;
 import br.gov.pe.reuso.api.model.TipoProcesso;
 import br.gov.pe.reuso.api.repository.TipoProcessoRepository;
 import br.gov.pe.reuso.api.service.TipoProcessoService;
-import br.gov.pe.reuso.api.service.exception.TipoProcessoComNomeJaExistenteException;
+import br.gov.pe.reuso.api.service.exception.TipoProcessoComDescricaoJaExistenteException;
 
 
 @RestController
@@ -82,8 +82,8 @@ public class TipoProcessoResource {
 		return ResponseEntity.ok(tipoProcessoSalvo);
 	}
 	
-	@ExceptionHandler(TipoProcessoComNomeJaExistenteException.class)
-	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(TipoProcessoComNomeJaExistenteException ex) {
+	@ExceptionHandler(TipoProcessoComDescricaoJaExistenteException.class)
+	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(TipoProcessoComDescricaoJaExistenteException ex) {
 		String mensagemTipoProcesso = messageSource.getMessage("tipoProcesso.nome-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemTipoProcesso, mensagemDesenvolvedor));
