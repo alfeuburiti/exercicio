@@ -83,7 +83,7 @@ public class RpaResource {
 	
 	@ExceptionHandler(RpaComDescricaoJaExistenteException.class)
 	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(RpaComDescricaoJaExistenteException ex) {
-		String mensagemRpa = messageSource.getMessage("rpa.nome-ja-existente", null, LocaleContextHolder.getLocale());
+		String mensagemRpa = messageSource.getMessage("rpa.descricao-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemRpa, mensagemDesenvolvedor));
 		

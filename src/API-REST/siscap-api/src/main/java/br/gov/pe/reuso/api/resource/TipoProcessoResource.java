@@ -84,7 +84,7 @@ public class TipoProcessoResource {
 	
 	@ExceptionHandler(TipoProcessoComDescricaoJaExistenteException.class)
 	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(TipoProcessoComDescricaoJaExistenteException ex) {
-		String mensagemTipoProcesso = messageSource.getMessage("tipoProcesso.nome-ja-existente", null, LocaleContextHolder.getLocale());
+		String mensagemTipoProcesso = messageSource.getMessage("tipoProcesso.descricao-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemTipoProcesso, mensagemDesenvolvedor));
 		

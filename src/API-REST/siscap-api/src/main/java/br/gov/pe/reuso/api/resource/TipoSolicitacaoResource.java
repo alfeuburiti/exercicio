@@ -83,7 +83,7 @@ public class TipoSolicitacaoResource {
 	
 	@ExceptionHandler(TipoSolicitacaoComDescricaoJaExistenteException.class)
 	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(TipoSolicitacaoComDescricaoJaExistenteException ex) {
-		String mensagemTipoSolicitacao = messageSource.getMessage("tipoSolicitacao.nome-ja-existente", null, LocaleContextHolder.getLocale());
+		String mensagemTipoSolicitacao = messageSource.getMessage("tipoSolicitacao.descricao-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemTipoSolicitacao, mensagemDesenvolvedor));
 		

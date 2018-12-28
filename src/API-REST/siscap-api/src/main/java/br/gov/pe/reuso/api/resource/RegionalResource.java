@@ -83,7 +83,7 @@ public class RegionalResource {
 	
 	@ExceptionHandler(RegionalComDescricaoJaExistenteException.class)
 	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(RegionalComDescricaoJaExistenteException ex) {
-		String mensagemRegional = messageSource.getMessage("regional.nome-ja-existente", null, LocaleContextHolder.getLocale());
+		String mensagemRegional = messageSource.getMessage("regional.descricao-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemRegional, mensagemDesenvolvedor));
 		

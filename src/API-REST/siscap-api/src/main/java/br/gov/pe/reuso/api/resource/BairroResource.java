@@ -83,7 +83,7 @@ public class BairroResource {
 	
 	@ExceptionHandler(BairroComDescricaoJaExistenteException.class)
 	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(BairroComDescricaoJaExistenteException ex) {
-		String mensagemBairro = messageSource.getMessage("bairro.nome-ja-existente", null, LocaleContextHolder.getLocale());
+		String mensagemBairro = messageSource.getMessage("bairro.descricao-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemBairro, mensagemDesenvolvedor));
 		

@@ -82,7 +82,7 @@ public class MicroRegiaoResource {
 	
 	@ExceptionHandler(MicroRegiaoComDescricaoJaExistenteException.class)
 	public ResponseEntity<Object> handleFonteComNomeJaExistenteException(MicroRegiaoComDescricaoJaExistenteException ex) {
-		String mensagemMicroRegiao = messageSource.getMessage("microRegiao.nome-ja-existente", null, LocaleContextHolder.getLocale());
+		String mensagemMicroRegiao = messageSource.getMessage("microRegiao.descricao-ja-existente", null, LocaleContextHolder.getLocale());
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemMicroRegiao, mensagemDesenvolvedor));
 		
