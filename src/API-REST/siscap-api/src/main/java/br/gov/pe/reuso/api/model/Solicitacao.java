@@ -31,6 +31,7 @@ public class Solicitacao extends BaseEntity {
 	private TipoSolicitacao tipoSolicitacao;
 	private Processo processo;
 	
+
 	public int getAno() {
 		return ano;
 	}
@@ -99,6 +100,9 @@ public class Solicitacao extends BaseEntity {
 		return descricao;
 	}
 
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name="regional")
 	public Regional getRegional() {
 		return regional;
 	}
@@ -107,6 +111,9 @@ public class Solicitacao extends BaseEntity {
 		return localidade;
 	}
 
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name="bairro")
 	public Bairro getBairro() {
 		return bairro;
 	}
@@ -119,30 +126,29 @@ public class Solicitacao extends BaseEntity {
 		return roteiro;
 	}
 
-	@NotNull
 	@ManyToOne
-	@JoinColumn(name="id_rpa")
+	@JoinColumn(name="rpa")
 	public Rpa getRPA() {
 		return RPA;
 	}
 
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="id_micro_regiao")
+	@JoinColumn(name="micro_regiao")
 	public MicroRegiao getMicroRegiao() {
 		return microRegiao;
 	}
 
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="id_tipo_solicitacao")
+	@JoinColumn(name="tipo_solicitacao")
 	public TipoSolicitacao getTipoSolicitacao() {
 		return tipoSolicitacao;
 	}
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="id_processo")
+	@JoinColumn(name="processo")
 	public Processo getProcesso() {
 		return processo;
 	}

@@ -33,7 +33,7 @@ import br.gov.pe.reuso.api.service.exception.SolicitacaoInexistenteException;
 
 
 @RestController
-@RequestMapping("/soliticacoes")
+@RequestMapping("/solicitacoes")
 public class SolicitacaoResource {
 	
 	@Autowired

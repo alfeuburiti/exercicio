@@ -21,13 +21,14 @@ public class Processo extends BaseEntity {
 		this.numero = numero;
 	}
 
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name="tipo")
 	public TipoProcesso getTipoProcesso() {
 		return tipoProcesso;
 	}
 	
-	@NotNull
-	@ManyToOne
-	@JoinColumn(name="id_tipo_processo")
+	
 	public void setTipoProcesso(TipoProcesso tipoProcesso) {
 		this.tipoProcesso = tipoProcesso;
 	}

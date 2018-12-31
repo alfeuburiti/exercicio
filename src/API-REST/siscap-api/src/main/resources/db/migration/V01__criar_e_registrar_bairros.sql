@@ -1,4 +1,4 @@
-CREATE TABLE dbo.bairro
+CREATE TABLE dbo.BAIRRO
 	(
 	id int NOT NULL IDENTITY (1, 1),
 	descricao varchar(50) NOT NULL,
