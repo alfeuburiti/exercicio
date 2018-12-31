@@ -134,14 +134,14 @@ public class Solicitacao extends BaseEntity {
 
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="micro_regiao")
+	@JoinColumn(name="microRegiao")
 	public MicroRegiao getMicroRegiao() {
 		return microRegiao;
 	}
 
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="tipo_solicitacao")
+	@JoinColumn(name="tipoSolicitacao")
 	public TipoSolicitacao getTipoSolicitacao() {
 		return tipoSolicitacao;
 	}

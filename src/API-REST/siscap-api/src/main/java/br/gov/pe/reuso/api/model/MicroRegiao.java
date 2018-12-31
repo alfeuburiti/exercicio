@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="MICRO_REGIAO")
+@Table(name="MICROREGIAO")
 public class MicroRegiao extends BaseEntity {
 
 	private String descricao;
