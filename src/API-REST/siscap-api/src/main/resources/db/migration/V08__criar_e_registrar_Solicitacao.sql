@@ -11,8 +11,8 @@ CREATE TABLE dbo.SOLICITACAO
 	endereco varchar(30),
 	roteiro varchar(30),
 	RPA int,
-	microRegiao int,
-	tipoSolicitacao int NOT NULL,
+	microregiao int,
+	tiposolicitacao int NOT NULL,
 	processo int NOT NULL
 
 	)  ON [PRIMARY]
@@ -74,5 +74,5 @@ INSERT INTO SOLICITACAO (descricao,
 	microRegiao,
 	tipoSolicitacao,
 	processo) 
-	VALUES ('descricao','2000', '12', '20120618 10:34:09 AM', 1, 'RECIFE', 1, 'RUA DAS FLORES', 'ROTEIRO A', 1, 1,1, 1)
+	VALUES ('descricao','2000', '12', '2012-06-18 10:34:09', 1, 'RECIFE', 1, 'RUA DAS FLORES', 'ROTEIRO A', 1, 1,1, 1)
 

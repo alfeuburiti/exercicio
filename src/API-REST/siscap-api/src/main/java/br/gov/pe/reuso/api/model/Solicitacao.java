@@ -18,7 +18,7 @@ public class Solicitacao extends BaseEntity {
 	
 	private int ano;
 	private int mes;
-	@DateTimeFormat(pattern="dd/MM/yyyy HH:mm:ss")
+	@DateTimeFormat(pattern="yyyy-mm-dd hh:mm:ss")
 	private LocalDateTime momento;	
 	private String descricao;
 	private Regional regional;
@@ -134,14 +134,14 @@ public class Solicitacao extends BaseEntity {
 
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="microRegiao")
+	@JoinColumn(name="microregiao")
 	public MicroRegiao getMicroRegiao() {
 		return microRegiao;
 	}
 
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="tipoSolicitacao")
+	@JoinColumn(name="tiposolicitacao")
 	public TipoSolicitacao getTipoSolicitacao() {
 		return tipoSolicitacao;
 	}
