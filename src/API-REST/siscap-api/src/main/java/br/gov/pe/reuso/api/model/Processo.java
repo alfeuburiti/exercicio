@@ -22,7 +22,7 @@ public class Processo extends BaseEntity {
 	private String situacao;
 	private String origem;
 	private String mes;
-	private int ano;
+	private String ano;
 	@DateTimeFormat(pattern="yyyy-mm-dd hh:mm:ss")
 	private LocalDateTime dataConclusao;
 	private TipoProcesso tipoProcesso;
