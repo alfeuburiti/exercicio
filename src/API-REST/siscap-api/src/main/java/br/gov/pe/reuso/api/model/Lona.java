@@ -5,11 +5,16 @@ import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="LONA")
 public class Lona extends BaseEntity {
 
 	private boolean situacao;
+	@CreationTimestamp
+	@DateTimeFormat(pattern="yyyy-mm-dd hh:mm:ss")
 	private LocalDateTime dataColocacao;
 	private String justificativa;
 	private int metragem;

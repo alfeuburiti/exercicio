@@ -2,6 +2,7 @@ package br.gov.pe.reuso.api.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="LOCALIDADE")
@@ -9,6 +10,7 @@ public class Localidade extends BaseEntity {
 
 	private String descricao;
 
+	@NotNull
 	public String getDescricao() {
 		return descricao;
 	}

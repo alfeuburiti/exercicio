@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -18,6 +19,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name="SOLICITACAO")
 public class Solicitacao extends BaseEntity {
 	
+	@CreationTimestamp
 	@DateTimeFormat(pattern="yyyy-mm-dd hh:mm:ss")
 	private LocalDateTime momento;	
 	private String descricao;
@@ -44,6 +46,7 @@ public class Solicitacao extends BaseEntity {
 		this.momento = momento;
 	}
 	
+	@NotNull
 	public String getDescricao() {
 		return descricao;
 	}
@@ -60,6 +63,7 @@ public class Solicitacao extends BaseEntity {
 		this.endereco = endereco;
 	}
 	
+	@NotNull
 	public String getRoteiro() {
 		return roteiro;
 	}
@@ -76,6 +80,7 @@ public class Solicitacao extends BaseEntity {
 		this.origemChamado = origemChamado;
 	}
 	
+	@NotNull
 	public boolean isVitimas() {
 		return vitimas;
 	}
@@ -84,6 +89,7 @@ public class Solicitacao extends BaseEntity {
 		this.vitimas = vitimas;
 	}
 	
+	@NotNull
 	public boolean isVitimasFatais() {
 		return vitimasFatais;
 	}
@@ -92,6 +98,7 @@ public class Solicitacao extends BaseEntity {
 		this.vitimasFatais = vitimasFatais;
 	}
 	
+	@NotNull
 	public boolean isPlantao() {
 		return plantao;
 	}
@@ -167,6 +174,7 @@ public class Solicitacao extends BaseEntity {
 		this.microRegiao = microRegiao;
 	}
 	
+	@NotNull
 	@OneToMany
 	@JoinColumn(name="processo")
 	public ArrayList<ProcessoSolicitacao> getProcessos() {

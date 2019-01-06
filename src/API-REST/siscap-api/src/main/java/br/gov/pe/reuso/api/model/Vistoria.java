@@ -8,12 +8,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="VISTORIA")
 public class Vistoria extends BaseEntity {
 	
+	@CreationTimestamp
 	@DateTimeFormat(pattern="yyyy-mm-dd hh:mm:ss")
 	private LocalDateTime data;
 	private Avaliador avaliador;
@@ -43,7 +45,6 @@ public class Vistoria extends BaseEntity {
 		this.avaliador = avaliador;
 	}
 	
-	@NotNull
 	@ManyToOne
 	@JoinColumn(name="risco")
 	public Risco getRisco() {
