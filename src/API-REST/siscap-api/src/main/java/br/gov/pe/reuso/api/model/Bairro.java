@@ -17,5 +17,4 @@ public class Bairro extends BaseEntity {
 		this.descricao = descricao;
 	}
 	
-
 }

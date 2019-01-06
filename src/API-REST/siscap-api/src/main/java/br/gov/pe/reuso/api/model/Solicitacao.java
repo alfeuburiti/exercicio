@@ -2,10 +2,12 @@ package br.gov.pe.reuso.api.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -16,141 +18,163 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name="SOLICITACAO")
 public class Solicitacao extends BaseEntity {
 	
-	private int ano;
-	private int mes;
 	@DateTimeFormat(pattern="yyyy-mm-dd hh:mm:ss")
 	private LocalDateTime momento;	
 	private String descricao;
-	private Regional regional;
-	private String localidade;
-	private Bairro bairro;
 	private String endereco;
 	private String roteiro;
+	private String origemChamado;
+	private boolean vitimas;
+	private boolean vitimasFatais;
+	private boolean plantao;
+	private double longitude;
+	private double latitude;
+	private Regional regional;
+	private Localidade localidade;
+	private Bairro bairro;
 	private Rpa RPA;
 	private MicroRegiao microRegiao;
-	private TipoSolicitacao tipoSolicitacao;
-	private Processo processo;
+	private ArrayList<ProcessoSolicitacao> processos;
 	
-
-	public int getAno() {
-		return ano;
+	public LocalDateTime getMomento() {
+		return momento;
 	}
-
-	public void setAno(int ano) {
-		this.ano = ano;
-	}
-
-	public int getMes() {
-		return mes;
-	}
-
-	public void setMes(int mes) {
-		this.mes = mes;
-	}
-
+	
 	public void setMomento(LocalDateTime momento) {
 		this.momento = momento;
+	}
+	
+	public String getDescricao() {
+		return descricao;
 	}
 	
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 	
-	public void setRegional(Regional regional) {
-		this.regional = regional;
-	}
-
-	public void setBairro(Bairro bairro) {
-		this.bairro = bairro;
+	public String getEndereco() {
+		return endereco;
 	}
 	
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	
-	public void setRPA(Rpa rPA) {
-		RPA = rPA;
-	}
-	
-	public void setMicroRegiao(MicroRegiao microRegiao) {
-		this.microRegiao = microRegiao;
+	public String getRoteiro() {
+		return roteiro;
 	}
 	
 	public void setRoteiro(String roteiro) {
 		this.roteiro = roteiro;
 	}
 	
-	public void setLocalidade(String localidade) {
-		this.localidade = localidade;
+	public String getOrigemChamado() {
+		return origemChamado;
 	}
 	
-	public void setTipoSolicitacao(TipoSolicitacao tipoSolicitacao) {
-		this.tipoSolicitacao = tipoSolicitacao;
+	public void setOrigemChamado(String origemChamado) {
+		this.origemChamado = origemChamado;
 	}
 	
-	public void setProcesso(Processo processo) {
-		this.processo = processo;
+	public boolean isVitimas() {
+		return vitimas;
 	}
 	
-	public LocalDateTime getMomento() {
-		return momento;
+	public void setVitimas(boolean vitimas) {
+		this.vitimas = vitimas;
 	}
-
-	public String getDescricao() {
-		return descricao;
+	
+	public boolean isVitimasFatais() {
+		return vitimasFatais;
 	}
-
+	
+	public void setVitimasFatais(boolean vitimasFatais) {
+		this.vitimasFatais = vitimasFatais;
+	}
+	
+	public boolean isPlantao() {
+		return plantao;
+	}
+	
+	public void setPlantao(boolean plantao) {
+		this.plantao = plantao;
+	}
+	
+	public double getLongitude() {
+		return longitude;
+	}
+	
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+	
+	public double getLatitude() {
+		return latitude;
+	}
+	
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name="regional")
 	public Regional getRegional() {
 		return regional;
 	}
-
-	public String getLocalidade() {
+	
+	public void setRegional(Regional regional) {
+		this.regional = regional;
+	}
+	
+	@ManyToOne
+	@JoinColumn(name="localidade")
+	public Localidade getLocalidade() {
 		return localidade;
 	}
-
+	
+	public void setLocalidade(Localidade localidade) {
+		this.localidade = localidade;
+	}
+	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name="bairro")
 	public Bairro getBairro() {
 		return bairro;
 	}
-
-	public String getEndereco() {
-		return endereco;
+	
+	public void setBairro(Bairro bairro) {
+		this.bairro = bairro;
 	}
-
-	public String getRoteiro() {
-		return roteiro;
-	}
-
+	
 	@ManyToOne
 	@JoinColumn(name="rpa")
 	public Rpa getRPA() {
 		return RPA;
 	}
-
-	@NotNull
+	public void setRPA(Rpa rPA) {
+		RPA = rPA;
+	}
+	
 	@ManyToOne
 	@JoinColumn(name="microregiao")
 	public MicroRegiao getMicroRegiao() {
 		return microRegiao;
 	}
-
-	@NotNull
-	@ManyToOne
-	@JoinColumn(name="tiposolicitacao")
-	public TipoSolicitacao getTipoSolicitacao() {
-		return tipoSolicitacao;
+	
+	public void setMicroRegiao(MicroRegiao microRegiao) {
+		this.microRegiao = microRegiao;
 	}
 	
-	@NotNull
-	@ManyToOne
+	@OneToMany
 	@JoinColumn(name="processo")
-	public Processo getProcesso() {
-		return processo;
+	public ArrayList<ProcessoSolicitacao> getProcessos() {
+		return processos;
+	}
+	
+	public void setProcessos(ArrayList<ProcessoSolicitacao> processos) {
+		this.processos = processos;
 	}
 	
 }
