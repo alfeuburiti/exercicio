@@ -9,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 
 import br.gov.pe.reuso.api.model.Bairro;
 
-
 public interface BairroRepository extends JpaRepository<Bairro, Long> {
 
 	Optional<Bairro> findByDescricao(String descricao);
