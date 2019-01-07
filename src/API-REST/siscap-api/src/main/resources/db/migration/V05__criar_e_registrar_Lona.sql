@@ -2,7 +2,7 @@ CREATE TABLE dbo.LONA
 	(
 	id int NOT NULL IDENTITY (1, 1),
 	situacao bit,
-	colocacacao_data varchar(20),
+	colocacao_data varchar(20),
 	justificativa varchar(50),
 	metragem int,
 	quantidade_pontos int
@@ -16,11 +16,11 @@ ALTER TABLE dbo.LONA ADD CONSTRAINT
 
 GO
 
-INSERT INTO LONA (descricao,
+INSERT INTO LONA (
 	situacao,
 	colocacao_data,
 	justificativa,
 	metragem,
 	quantidade_pontos) 
-	VALUES ('Qualquer Descricao',1, '2012-06-18 10:34:09', 'Sem justificativa', 100, 1)
+	VALUES (1, '2012-06-18 10:34:09', 'Sem justificativa', 100, 1)
 

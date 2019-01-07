@@ -1,6 +1,6 @@
 CREATE TABLE dbo.SETOR
 	(
-	id int NOT NULL IDENTITY (1, 1),area
+	id int NOT NULL IDENTITY (1, 1),
 	area varchar(50) NOT NULL,
 
 	)  ON [PRIMARY]
