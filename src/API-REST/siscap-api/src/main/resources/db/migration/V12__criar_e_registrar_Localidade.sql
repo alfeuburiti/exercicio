@@ -1,6 +1,6 @@
 CREATE TABLE dbo.LOCALIDADE
 	(
-	id int NOT NULL IDENTITY (1, 1),descricao
+	id int NOT NULL IDENTITY (1, 1),
 	descricao varchar(50) NOT NULL,
 
 	)  ON [PRIMARY]

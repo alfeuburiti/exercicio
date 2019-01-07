@@ -61,7 +61,7 @@ GO
 ALTER TABLE [dbo].[VISTORIA] CHECK CONSTRAINT [FK_LOCALIDADE]
 GO
 
-INSERT INTO VISTORIA (descricao,
+INSERT INTO VISTORIA (
 	vistoria_data,
 	avaliador,
 	risco,
