@@ -28,12 +28,12 @@ public class Lona extends BaseEntity {
 		this.situacao = situacao;
 	}
 	
-	public LocalDateTime getDataColocacao() {
-		return dataColocacao;
+	public LocalDateTime getData() {
+		return data;
 	}
 	
-	public void setDataColocacao(LocalDateTime dataColocacao) {
-		this.dataColocacao = dataColocacao;
+	public void setData(LocalDateTime data) {
+		this.data = data;
 	}
 	
 	public String getJustificativa() {
