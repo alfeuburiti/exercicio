@@ -18,7 +18,7 @@ GO
 
 INSERT INTO LONA (
 	situacao,
-	colocacao_data,
+	data,
 	justificativa,
 	metragem,
 	quantidade_pontos) 
