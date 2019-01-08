@@ -31,6 +31,7 @@ public class Solicitacao extends BaseEntity {
 	private boolean plantao;
 	private double longitude;
 	private double latitude;
+	private Chamado chamado;
 	private Regional regional;
 	private Localidade localidade;
 	private Bairro bairro;
@@ -183,6 +184,16 @@ public class Solicitacao extends BaseEntity {
 	
 	public void setProcessos(List<ProcessoSolicitacao> processos) {
 		this.processos = processos;
+	}
+
+	@ManyToOne
+	@JoinColumn(name="chamado")
+	public Chamado getChamado() {
+		return chamado;
+	}
+
+	public void setChamado(Chamado chamado) {
+		this.chamado = chamado;
 	}
 	
 }
