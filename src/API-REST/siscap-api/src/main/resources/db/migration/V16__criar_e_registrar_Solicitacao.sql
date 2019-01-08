@@ -15,7 +15,8 @@ CREATE TABLE dbo.SOLICITACAO
 	localidade int,
 	REGIONAL int,
 	RPA int,
-	microregiao int
+	microregiao int,
+	chamado int
 
 	)  ON [PRIMARY]
 GO
@@ -63,6 +64,13 @@ GO
 ALTER TABLE [dbo].[SOLICITACAO] CHECK CONSTRAINT [FK_LOCALIDADE_SOL]
 GO
 
+ALTER TABLE [dbo].[SOLICITACAO]  WITH CHECK ADD  CONSTRAINT [FK_CHAMADO] FOREIGN KEY([CHAMADO])
+REFERENCES [dbo].[CHAMADO] ([id])
+GO
+
+ALTER TABLE [dbo].[SOLICITACAO] CHECK CONSTRAINT [FK_CHAMADO]
+GO
+
 INSERT INTO SOLICITACAO (
 	momento,
 	descricao,
@@ -78,7 +86,8 @@ INSERT INTO SOLICITACAO (
 	localidade,
 	REGIONAL,
 	RPA,
-	microregiao
+	microregiao, 
+	chamado
 	) 
-	VALUES ('2012-06-18 10:34:09', 'descricao',  'RUA DAS FLORES', 'ROTEIRO A', 'Sem Origem', 1, 1, 1, 1.0, 1.0, 1, 1, 1, 1, 1)
+	VALUES ('2012-06-18 10:34:09', 'descricao',  'RUA DAS FLORES', 'ROTEIRO A', 'Sem Origem', 1, 1, 1, 1.0, 1.0, 1, 1, 1, 1, 1, 1)
 
