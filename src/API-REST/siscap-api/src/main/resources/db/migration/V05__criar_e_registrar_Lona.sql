@@ -2,7 +2,7 @@ CREATE TABLE dbo.LONA
 	(
 	id int NOT NULL IDENTITY (1, 1),
 	situacao bit,
-	colocacao_data varchar(20),
+	data varchar(20),
 	justificativa varchar(50),
 	metragem int,
 	quantidade_pontos int

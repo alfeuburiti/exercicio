@@ -15,7 +15,7 @@ public class Lona extends BaseEntity {
 	private boolean situacao;
 	@CreationTimestamp
 	@DateTimeFormat(pattern="yyyy-mm-dd hh:mm:ss")
-	private LocalDateTime dataColocacao;
+	private LocalDateTime data;
 	private String justificativa;
 	private int metragem;
 	private int quantidadePontos;

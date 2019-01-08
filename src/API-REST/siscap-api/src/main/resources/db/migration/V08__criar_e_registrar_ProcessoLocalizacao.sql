@@ -1,7 +1,7 @@
 CREATE TABLE dbo.PROCESSO_LOCALIZACAO
 	(
 	id int NOT NULL IDENTITY (1, 1),
-	descricao varchar(50) NOT NULL,
+	descricao varchar(50) NOT NULL
 
 	)  ON [PRIMARY]
 GO

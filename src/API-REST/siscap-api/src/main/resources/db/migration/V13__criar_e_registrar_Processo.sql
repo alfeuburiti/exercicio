@@ -11,8 +11,7 @@ CREATE TABLE dbo.PROCESSO
 	origem varchar(50),
 	tipo_processo int,
 	processo_status int,
-	processo_localizacao int,
-	lona int
+	processo_localizacao int
 	)  ON [PRIMARY]
 GO
 ALTER TABLE dbo.PROCESSO ADD CONSTRAINT
@@ -43,13 +42,6 @@ GO
 
 ALTER TABLE [dbo].[PROCESSO] CHECK CONSTRAINT [FK_PROCESSO_LOCALIZACAO]
 GO
-
-ALTER TABLE [dbo].[PROCESSO]  WITH CHECK ADD  CONSTRAINT [FK_LONA] FOREIGN KEY([LONA])
-REFERENCES [dbo].[LONA] ([id])
-GO
-
-ALTER TABLE [dbo].[PROCESSO] CHECK CONSTRAINT [FK_LONA]
-GO
 	
 INSERT INTO PROCESSO (
 	ano, 
@@ -62,9 +54,8 @@ INSERT INTO PROCESSO (
 	origem, 
 	tipo_processo, 
 	processo_status, 
-	processo_localizacao,
-	lona
+	processo_localizacao
 	) 
-	VALUES('2019', '01', '01', 'PROCESSO  A', NULL, NULL, NULL, NULL, 1, 1, 1, 1)
+	VALUES('2019', '01', '01', 'PROCESSO  A', NULL, NULL, NULL, NULL, 1, 1, 1)
 
 GO

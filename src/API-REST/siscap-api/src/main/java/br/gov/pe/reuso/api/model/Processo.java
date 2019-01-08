@@ -1,12 +1,10 @@
 package br.gov.pe.reuso.api.model;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -28,9 +26,6 @@ public class Processo extends BaseEntity {
 	private TipoProcesso tipoProcesso;
 	private ProcessoStatus processoStatus;
 	private ProcessoLocalizacao processoLocalizacao;
-	private List<Lona> lonas;
-	private List<ProcessoSolicitacao> solicitacoes;
-	private List<Vistoria> vistorias;
 	
 	public String getDescricao() {
 		return descricao;
@@ -98,7 +93,7 @@ public class Processo extends BaseEntity {
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="tipoprocesso")
+	@JoinColumn(name="tipo_processo")
 	public TipoProcesso getTipoProcesso() {
 		return tipoProcesso;
 	}
@@ -109,7 +104,7 @@ public class Processo extends BaseEntity {
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="processostatus")
+	@JoinColumn(name="processo_status")
 	public ProcessoStatus getProcessoStatus() {
 		return processoStatus;
 	}
@@ -120,43 +115,13 @@ public class Processo extends BaseEntity {
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="localizacao")
+	@JoinColumn(name="processo_localizacao")
 	public ProcessoLocalizacao getProcessoLocalizacao() {
 		return processoLocalizacao;
 	}
 	
 	public void setProcessoLocalizacao(ProcessoLocalizacao processoLocalizacao) {
 		this.processoLocalizacao = processoLocalizacao;
-	}
-	
-	@OneToMany
-	@JoinColumn(name="lona")
-	public List<Lona> getLonas() {
-		return lonas;
-	}
-	
-	public void setLonas(List<Lona> lonas) {
-		this.lonas = lonas;
-	}
-	
-	@OneToMany
-	@JoinColumn(name="solicitacao")
-	public List<ProcessoSolicitacao> getSolicitacoes() {
-		return solicitacoes;
-	}
-	
-	public void setSolicitacoes(List<ProcessoSolicitacao> solicitacoes) {
-		this.solicitacoes = solicitacoes;
-	}
-	
-	@OneToMany
-	@JoinColumn(name="vistoria")
-	public List<Vistoria> getVistorias() {
-		return vistorias;
-	}
-	
-	public void setVistorias(List<Vistoria> vistorias) {
-		this.vistorias = vistorias;
 	}
 
 }

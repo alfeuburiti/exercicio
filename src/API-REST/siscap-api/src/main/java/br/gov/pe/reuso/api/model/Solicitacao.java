@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -36,7 +35,6 @@ public class Solicitacao extends BaseEntity {
 	private Bairro bairro;
 	private Rpa RPA;
 	private MicroRegiao microRegiao;
-	private List<ProcessoSolicitacao> processos;
 	
 	public LocalDateTime getMomento() {
 		return momento;
@@ -172,17 +170,6 @@ public class Solicitacao extends BaseEntity {
 	
 	public void setMicroRegiao(MicroRegiao microRegiao) {
 		this.microRegiao = microRegiao;
-	}
-	
-	@NotNull
-	@OneToMany
-	@JoinColumn(name="processo")
-	public List<ProcessoSolicitacao> getProcessos() {
-		return processos;
-	}
-	
-	public void setProcessos(List<ProcessoSolicitacao> processos) {
-		this.processos = processos;
 	}
 
 	@ManyToOne

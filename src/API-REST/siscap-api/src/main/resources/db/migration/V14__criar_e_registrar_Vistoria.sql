@@ -1,9 +1,10 @@
 CREATE TABLE dbo.VISTORIA
 	(
 	id int NOT NULL IDENTITY (1, 1),
-	vistoria_data varchar(20),
+	data varchar(20),
 	avaliador int,
 	risco int,
+	setor int,
 	RPA int,
 	microregiao int,
 	localidade int NOT NULL,
@@ -61,14 +62,22 @@ GO
 ALTER TABLE [dbo].[VISTORIA] CHECK CONSTRAINT [FK_LOCALIDADE]
 GO
 
+ALTER TABLE [dbo].[VISTORIA]  WITH CHECK ADD  CONSTRAINT [FK_SETOR] FOREIGN KEY([SETOR])
+REFERENCES [dbo].[SETOR] ([id])
+GO
+
+ALTER TABLE [dbo].[VISTORIA] CHECK CONSTRAINT [FK_SETOR]
+GO
+
 INSERT INTO VISTORIA (
-	vistoria_data,
+	data,
 	avaliador,
 	risco,
+	setor,
 	RPA,
 	microregiao,
 	localidade,
 	processo 
 	) 
-	VALUES ('2012-06-18 10:34:09', 1, 1, 1, 1, 1, 1)
+	VALUES ('2012-06-18 10:34:09', 1, 1, 1, 1, 1, 1, 1)
 
