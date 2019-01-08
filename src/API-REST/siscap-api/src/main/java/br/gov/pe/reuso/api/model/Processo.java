@@ -80,11 +80,11 @@ public class Processo extends BaseEntity {
 		this.mes = mes;
 	}
 	
-	public int getAno() {
+	public String getAno() {
 		return ano;
 	}
 	
-	public void setAno(int ano) {
+	public void setAno(String ano) {
 		this.ano = ano;
 	}
 	
