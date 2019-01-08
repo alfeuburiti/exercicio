@@ -79,5 +79,29 @@ INSERT INTO VISTORIA (
 	localidade,
 	processo 
 	) 
-	VALUES ('2012-06-18 10:34:09', 1, 1, 1, 1, 1, 1, 1)
+	VALUES ('2012-06-18 00:00:00', 1, 1, 1, 1, 1, 1, 1)
+	
+INSERT INTO VISTORIA (
+	data,
+	avaliador,
+	risco,
+	setor,
+	RPA,
+	microregiao,
+	localidade,
+	processo 
+	) 
+	VALUES ('2013-07-18 00:00:00', 2, 1, 3, 4, 4, 4, 2)
+	
+INSERT INTO VISTORIA (
+	data,
+	avaliador,
+	risco,
+	setor,
+	RPA,
+	microregiao,
+	localidade,
+	processo 
+	) 
+	VALUES ('2012-06-18 00:00:00', 3, 3, 2, 3, 3, 3, 3)		
 
