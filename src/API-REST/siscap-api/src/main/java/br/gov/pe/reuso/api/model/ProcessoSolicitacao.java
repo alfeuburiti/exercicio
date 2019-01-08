@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="PROCESSO_SOLICITACAO")
-public class ProcessoSolicitacao {
+public class ProcessoSolicitacao extends BaseEntity {
 	
 	private Processo processo;
 	private Solicitacao solicitacao;

@@ -2,7 +2,7 @@ package br.gov.pe.reuso.api.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -36,7 +36,7 @@ public class Solicitacao extends BaseEntity {
 	private Bairro bairro;
 	private Rpa RPA;
 	private MicroRegiao microRegiao;
-	private ArrayList<ProcessoSolicitacao> processos;
+	private List<ProcessoSolicitacao> processos;
 	
 	public LocalDateTime getMomento() {
 		return momento;
@@ -177,11 +177,11 @@ public class Solicitacao extends BaseEntity {
 	@NotNull
 	@OneToMany
 	@JoinColumn(name="processo")
-	public ArrayList<ProcessoSolicitacao> getProcessos() {
+	public List<ProcessoSolicitacao> getProcessos() {
 		return processos;
 	}
 	
-	public void setProcessos(ArrayList<ProcessoSolicitacao> processos) {
+	public void setProcessos(List<ProcessoSolicitacao> processos) {
 		this.processos = processos;
 	}
 	

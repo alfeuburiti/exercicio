@@ -1,7 +1,7 @@
 package br.gov.pe.reuso.api.model;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -9,8 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
 import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 @Table(name="PROCESSO")
@@ -28,9 +28,9 @@ public class Processo extends BaseEntity {
 	private TipoProcesso tipoProcesso;
 	private ProcessoStatus processoStatus;
 	private ProcessoLocalizacao processoLocalizacao;
-	private ArrayList<Lona> lonas;
-	private ArrayList<ProcessoSolicitacao> solicitacoes;
-	private ArrayList<Vistoria> vistorias;
+	private List<Lona> lonas;
+	private List<ProcessoSolicitacao> solicitacoes;
+	private List<Vistoria> vistorias;
 	
 	public String getDescricao() {
 		return descricao;
@@ -131,31 +131,31 @@ public class Processo extends BaseEntity {
 	
 	@OneToMany
 	@JoinColumn(name="lona")
-	public ArrayList<Lona> getLonas() {
+	public List<Lona> getLonas() {
 		return lonas;
 	}
 	
-	public void setLonas(ArrayList<Lona> lonas) {
+	public void setLonas(List<Lona> lonas) {
 		this.lonas = lonas;
 	}
 	
 	@OneToMany
 	@JoinColumn(name="solicitacao")
-	public ArrayList<ProcessoSolicitacao> getSolicitacoes() {
+	public List<ProcessoSolicitacao> getSolicitacoes() {
 		return solicitacoes;
 	}
 	
-	public void setSolicitacoes(ArrayList<ProcessoSolicitacao> solicitacoes) {
+	public void setSolicitacoes(List<ProcessoSolicitacao> solicitacoes) {
 		this.solicitacoes = solicitacoes;
 	}
 	
 	@OneToMany
 	@JoinColumn(name="vistoria")
-	public ArrayList<Vistoria> getVistorias() {
+	public List<Vistoria> getVistorias() {
 		return vistorias;
 	}
 	
-	public void setVistorias(ArrayList<Vistoria> vistorias) {
+	public void setVistorias(List<Vistoria> vistorias) {
 		this.vistorias = vistorias;
 	}
 
